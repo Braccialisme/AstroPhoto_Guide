@@ -632,6 +632,116 @@ a:hover { color: var(--accent-soft); }
   letter-spacing: 0.02em;
 }
 
+/* -- Cran (niveau 1) : petite étape numérotée au-dessus du nom -- */
+.gear__step {
+  color: var(--faint);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+/* ------------------------------------------------------------
+   CONFIGURATIONS — composant tarifs, réutilisé à chaque niveau.
+   Volontairement distinct des cartes matériel : fond plus dense,
+   bordure pleine, lignes séparées. On doit le repérer d'un
+   coup d'œil en scrollant.
+   ------------------------------------------------------------ */
+.configs {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 3.5vw, 2rem);
+}
+
+.configs__label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+.configs__scope {
+  color: var(--faint);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.78rem;
+}
+
+.configs__list { list-style: none; margin: 0; padding: 0; }
+
+/* Une ligne = nom · contenu · prix */
+.config {
+  display: grid;
+  grid-template-columns: 9rem 1fr auto;
+  gap: 0.4rem 1.25rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+.config:first-child { border-top: 0; padding-top: 0; }
+.config:last-child { padding-bottom: 0; }
+
+.config__name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.config__desc { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.config__price {
+  color: var(--accent);
+  font-weight: 650;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Config mise en avant */
+.config--reco .config__name { color: var(--accent); }
+.config--reco .config__name::after {
+  content: '★';
+  margin-left: 0.4rem;
+  font-size: 0.75em;
+}
+
+/* ------------------------------------------------------------
+   ENCADRÉ SECONDAIRE (note monture, budget planétaire)
+   Même famille visuelle que .configs, en plus sobre.
+   ------------------------------------------------------------ */
+.mount {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+}
+.mount__label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+.mount p:last-child { color: var(--muted); font-size: 0.92rem; margin: 0; }
+.mount strong { color: var(--text); }
+
+.mount--budget { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+/* ------------------------------------------------------------
+   ENCADRÉ PÉDAGOGIQUE discret (échelle de Bortle)
+   ------------------------------------------------------------ */
+.hint {
+  max-width: var(--measure);
+  margin: 0 0 2.5rem;
+  padding: 1.1rem 1.35rem;
+  border-left: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.hint p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+
 /* -- Ligne « la limite » -- */
 .limit {
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
@@ -745,12 +855,40 @@ a:hover { color: var(--accent-soft); }
   padding: clamp(1.9rem, 5vw, 3rem);
   max-width: var(--measure);
 }
+.callout__flag {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
 .callout__title {
   font-size: clamp(1.5rem, 3.5vw, 2.1rem);
   color: var(--accent);
   margin-bottom: 1.25rem;
 }
 .callout p { color: var(--muted); }
+
+/* Intertitre à l'intérieur de l'encart */
+.callout__sub {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Phrase de clôture — détachée du corps */
+.callout__close {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+}
 
 
 /* ============================================================
@@ -899,6 +1037,15 @@ a:hover { color: var(--accent-soft); }
    depuis l'attribut data-label posé sur chaque <td>.
    ------------------------------------------------------------ */
 @media (max-width: 680px) {
+  /* Configurations : nom et prix sur une ligne, contenu dessous */
+  .config {
+    grid-template-columns: 1fr auto;
+    gap: 0.35rem 1rem;
+  }
+  .config__name  { grid-column: 1; grid-row: 1; }
+  .config__price { grid-column: 2; grid-row: 1; }
+  .config__desc  { grid-column: 1 / -1; grid-row: 2; }
+
   .table-scroll { border: 0; overflow-x: visible; }
 
   .table { min-width: 0; display: block; }

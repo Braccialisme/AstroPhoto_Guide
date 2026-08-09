@@ -139,12 +139,43 @@
 
         <div class="level__grid">
           <div class="level__gear">
-            <div class="gear gear--soft reveal">
-              <h4 class="gear__name">iPhone 15 Pro <span class="gear__meta">déjà possédé — 0 €</span></h4>
-              <p class="gear__pitch">
-                Capture en RAW, pose longue, et un traitement léger derrière.
-                Le coût d'entrée du projet est nul.
-              </p>
+            <p class="gear__label reveal">Deux crans</p>
+            <div class="gear-list reveal">
+
+              <div class="gear gear--soft">
+                <p class="gear__step">Cran 1</p>
+                <h4 class="gear__name">
+                  iPhone 15 Pro + trépied + support à vis
+                  <span class="gear__meta">~40 €</span>
+                </h4>
+                <p class="gear__pitch">
+                  On commence ce soir. Capture en RAW, pose longue, et un
+                  traitement léger derrière.
+                </p>
+              </div>
+
+              <div class="gear">
+                <p class="gear__step">Cran 2</p>
+                <h4 class="gear__name">
+                  + mini-tracker nomade
+                  <span class="gear__meta">~250-350 €</span>
+                </h4>
+                <p class="gear__pitch">
+                  <strong>Sky-Watcher Star Adventurer Mini</strong> ou
+                  <strong>Move Shoot Move (MSM Rotator)</strong>. Il suit la
+                  rotation du ciel, ce qui autorise des poses bien plus longues :
+                  la Voie lactée sort nettement plus détaillée, sans filé
+                  d'étoiles.
+                </p>
+                <ul class="pc">
+                  <li class="pc__pro">
+                    Vrai tracker pour appareil photo, pas un gadget pour
+                    téléphone : il se réutilise tel quel avec le boîtier du
+                    niveau 2.
+                  </li>
+                </ul>
+              </div>
+
             </div>
             <p class="note reveal">
               <!-- TODO: compléter avec la liste d'applications retenue -->
@@ -165,6 +196,23 @@
               </figcaption>
             </figure>
           </div>
+        </div>
+
+        <!-- Tarifs — composant .configs, réutilisé à chaque niveau -->
+        <div class="configs reveal">
+          <p class="configs__label">Configurations</p>
+          <ul class="configs__list">
+            <li class="config">
+              <span class="config__name">Entrée</span>
+              <span class="config__desc">iPhone (déjà là) + trépied + support</span>
+              <span class="config__price">~40 €</span>
+            </li>
+            <li class="config">
+              <span class="config__name">Nomade</span>
+              <span class="config__desc">+ mini-tracker</span>
+              <span class="config__price">~300-400 €</span>
+            </li>
+          </ul>
         </div>
 
         <p class="limit reveal">
@@ -319,6 +367,31 @@
               </figcaption>
             </figure>
           </div>
+        </div>
+
+        <!-- Tarifs -->
+        <div class="configs reveal">
+          <p class="configs__label">Configurations</p>
+          <ul class="configs__list">
+            <li class="config">
+              <span class="config__name">Entrée</span>
+              <span class="config__desc">Sony A7 II + Samyang 24 f/1.8</span>
+              <span class="config__price">~900 €</span>
+            </li>
+            <li class="config config--reco">
+              <span class="config__name">Recommandée</span>
+              <span class="config__desc">
+                Sony A7R II (42 Mpx) + Samyang 24 f/1.8 + accessoires
+                (batterie, carte, télécommande)
+              </span>
+              <span class="config__price">~1150 €</span>
+            </li>
+            <li class="config">
+              <span class="config__name">Confort</span>
+              <span class="config__desc">Sony A7 III + Samyang 24 f/1.8 + accessoires</span>
+              <span class="config__price">~1300 €</span>
+            </li>
+          </ul>
         </div>
 
         <p class="limit reveal">
@@ -543,6 +616,43 @@
           </aside>
         </div>
 
+        <!-- Tarifs — optique seule, la monture est un poste commun -->
+        <div class="configs reveal">
+          <p class="configs__label">
+            Configurations <span class="configs__scope">optique seule</span>
+          </p>
+          <ul class="configs__list">
+            <li class="config">
+              <span class="config__name">Entrée</span>
+              <span class="config__desc">Lunette 72ED + aplanisseur</span>
+              <span class="config__price">~550 €</span>
+            </li>
+            <li class="config config--reco">
+              <span class="config__name">Recommandée</span>
+              <span class="config__desc">Askar 71F (correcteur intégré)</span>
+              <span class="config__price">~750 €</span>
+            </li>
+            <li class="config">
+              <span class="config__name">Diamètre</span>
+              <span class="config__desc">
+                Newton 200/1000 — mais monture lourde, voir ci-dessous
+              </span>
+              <span class="config__price">~450 €</span>
+            </li>
+          </ul>
+
+          <!-- Note monture : le poste commun, volontairement mis en avant -->
+          <aside class="mount">
+            <p class="mount__label">Le poste commun : la monture</p>
+            <p>
+              La monture motorisée est le poste central et commun. Compter
+              <strong>~500 €</strong> (Star Adventurer GTi / EQ5 GoTo, pour une
+              lunette) à <strong>~1000 €+</strong> (HEQ5, obligatoire pour un
+              Newton 200/1000). C'est elle qui fait ou défait l'astrophoto.
+            </p>
+          </aside>
+        </div>
+
         <p class="limit reveal">
           <span class="limit__tag">La limite</span>
           Le ciel profond en grand, oui. Le gros plan planétaire, non — c'est un
@@ -559,13 +669,41 @@
     <div class="wrap">
       <p class="section__num">03</p>
       <div class="callout reveal">
-        <h2 class="callout__title">Le planétaire, un autre délire</h2>
-        <p class="placeholder-tag">Section à rédiger</p>
-        <!-- TODO: contenu — logique inverse du ciel profond : vidéo, poses courtes, empilement -->
+        <p class="callout__flag">Embranchement</p>
+        <h2 class="callout__title">Les planètes : une autre discipline</h2>
+
         <p>
-          Rien à voir avec le ciel profond : ici on filme, on empile des milliers
-          d'images très courtes, et c'est la turbulence atmosphérique qu'on
-          combat, pas la pollution lumineuse.
+          Photographier Jupiter ou Saturne en gros plan n'est pas la même chose
+          que le ciel profond — c'est presque l'inverse. Ici on ne pose pas
+          longtemps : on filme la planète, on capture des milliers d'images en
+          quelques minutes, et un logiciel empile automatiquement les plus
+          nettes (technique du <em>lucky imaging</em>, qui déjoue la turbulence
+          de l'air).
+        </p>
+
+        <p class="callout__sub">Ce qu'il faut, en plus</p>
+        <p>
+          Une longue focale (un télescope type Maksutov ou Schmidt-Cassegrain,
+          ou un Newton + Barlow), une caméra planétaire dédiée (pas le boîtier),
+          et c'est tout un apprentissage à part.
+        </p>
+
+        <!-- Encadré budget — chiffrage à affiner une fois la monture arrêtée -->
+        <aside class="mount mount--budget">
+          <p class="mount__label">Budget planétaire</p>
+          <p>
+            Bonne nouvelle : le planétaire peut réutiliser la monture de la
+            lunette. Le surcoût se limite alors au tube longue focale
+            (<strong>~300-600 €</strong> pour un Maksutov 127) + une caméra
+            planétaire (<strong>~200-300 €</strong>). À envisager en phase 2,
+            pas au lancement.
+          </p>
+        </aside>
+
+        <p class="callout__close">
+          On le mentionne pour être complets, mais ce n'est pas la priorité du
+          projet. Notre cœur de cible, c'est le ciel profond et les paysages
+          étoilés.
         </p>
       </div>
     </div>
@@ -577,12 +715,66 @@
   <section id="spots" class="section">
     <div class="wrap">
       <p class="section__num">04</p>
-      <h2 class="section__title reveal">Où on shoote</h2>
-      <p class="placeholder-tag reveal">Section à rédiger</p>
-      <!-- TODO: contenu — liste des spots, temps de trajet, qualité de ciel (échelle Bortle) -->
+      <h2 class="section__title reveal">Où on capture le ciel</h2>
       <p class="section__intro reveal">
-        Nos spots classés par qualité de ciel et temps de trajet : du balcon pour
-        la Lune, aux sites à une ou deux heures de route pour le ciel profond.
+        La qualité du ciel change tout. On la mesure sur l'échelle de Bortle
+        (de 1, noir absolu, à 9, plein centre-ville). L'atout du projet : on a
+        accès à plusieurs ciels très différents, à moins de deux heures.
+      </p>
+
+      <!-- Encadré pédagogique — discret, pour le lecteur non technique -->
+      <aside class="hint reveal">
+        <p>
+          L'échelle est logarithmique : le saut entre Paris (Bortle 8-9) et un
+          ciel de campagne (Bortle 3-4) est énorme. Dès le Bortle 4, la Voie
+          lactée est évidente à l'œil nu.
+        </p>
+      </aside>
+
+      <div class="table-scroll reveal">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Spot</th>
+              <th scope="col">Bortle</th>
+              <th scope="col">Accès</th>
+              <th scope="col">Bon pour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Paris</th>
+              <td data-label="Bortle">8-9</td>
+              <td data-label="Accès">Sur place</td>
+              <td data-label="Bon pour">Lune, planètes, nébuleuses au filtre</td>
+            </tr>
+            <tr>
+              <th scope="row">Champigny</th>
+              <td data-label="Bortle">~7</td>
+              <td data-label="Accès">Très proche</td>
+              <td data-label="Bon pour">Lune, tests, nébuleuses au filtre</td>
+            </tr>
+            <tr>
+              <th scope="row">Marne (vers Provins)</th>
+              <td data-label="Bortle">~3</td>
+              <td data-label="Accès">~1h30</td>
+              <td data-label="Bon pour">Tout : Voie lactée, galaxies, ciel profond</td>
+            </tr>
+            <tr>
+              <th scope="row">Hameau (Loir-et-Cher)</th>
+              <td data-label="Bortle">~4</td>
+              <td data-label="Accès">~2h</td>
+              <td data-label="Bon pour">Ciel profond, nightscape</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="section__note reveal">
+        Concrètement : Paris pour s'entraîner au quotidien (Lune, planètes,
+        nébuleuses au filtre — insensibles à la pollution lumineuse), la
+        campagne pour les galaxies et la Voie lactée. Les deux se complètent
+        parfaitement.
       </p>
     </div>
   </section>
