@@ -19,28 +19,32 @@
 
 
 /* ============================================================
-   0. PALETTES D'ACCENT — trois propositions
+   0. ACCENT — trois propositions
    ------------------------------------------------------------
-   Pour changer d'accent : copier les 3 lignes de la palette
-   choisie dans le bloc :root (section 1), en remplaçant
-   --accent / --accent-soft / --accent-glow.
+   La direction est neutre : anthracite très sombre et noir, texte
+   blanc, accent achromatique. La hiérarchie passe par la taille,
+   la graisse et l'espace — pas par la couleur. Les images sont
+   les seules taches colorées de la page.
 
-   OPTION A — Ambre doux  (chaleureux, « feu de camp sous les étoiles »)
-     --accent:      #e8a94a;
-     --accent-soft: #f2c884;
-     --accent-glow: rgba(232, 169, 74, 0.16);
+   Pour changer d'accent : copier les 3 lignes de l'option choisie
+   dans le bloc :root ci-dessous.
 
-   OPTION B — Cyan glacé  (froid, technique, très lisible sur bleu-nuit)
-     --accent:      #57c8dd;
-     --accent-soft: #93dceb;
-     --accent-glow: rgba(87, 200, 221, 0.16);
+   OPTION A — Blanc pur  (le plus premium, contraste maximal)
+     --accent:      #ffffff;
+     --accent-soft: #ffffff;
+     --accent-glow: rgba(255, 255, 255, 0.10);
 
-   OPTION C — Rose nébuleuse  (Hα, plus « ciel profond », plus signé)
-     --accent:      #e07a9e;
-     --accent-soft: #f0a9c2;
-     --accent-glow: rgba(224, 122, 158, 0.16);
+   OPTION B — Gris clair  (un cran plus doux, moins d'éclat)
+     --accent:      #d4d4d8;
+     --accent-soft: #ffffff;
+     --accent-glow: rgba(212, 212, 216, 0.10);
 
-   Actuellement active : OPTION A — Ambre doux.
+   OPTION C — Blanc bleuté  (reste neutre, souffle « nuit »)
+     --accent:      #e8ecf2;
+     --accent-soft: #ffffff;
+     --accent-glow: rgba(232, 236, 242, 0.10);
+
+   Actuellement active : OPTION A — Blanc pur.
    ============================================================ */
 
 
@@ -49,20 +53,31 @@
    ============================================================ */
 :root {
   /* Accent — voir section 0 pour les alternatives */
-  --accent:      #e8a94a;
-  --accent-soft: #f2c884;
-  --accent-glow: rgba(232, 169, 74, 0.16);
+  --accent:      #ffffff;
+  --accent-soft: #ffffff;
+  --accent-glow: rgba(255, 255, 255, 0.10);
 
-  /* Fonds — bleu-nuit / charbon, jamais de noir pur */
-  --bg:        #0b0f18;
-  --bg-alt:    #101724;
-  --surface:   #141c2b;
-  --surface-2: #182132;
+  /* Contrepartie sombre de l'accent (texte posé SUR l'accent) */
+  --on-accent: #0a0a0b;
 
-  /* Texte — blanc légèrement cassé, jamais #fff */
-  --text:   #e6e9ef;
-  --muted:  #9aa4b8;
-  --faint:  #6b7489;
+  /* Fonds — noir et charbon */
+  --bg:        #0a0a0b;
+  --bg-alt:    #101012;
+  --surface:   #1a1a1d;
+  --surface-2: #202024;
+
+  /* Texte — blanc cassé */
+  --text:   #f5f5f5;
+  --muted:  #a8a8ad;
+  /* --faint sert aux petites capitales (numéros de section, crédits,
+     labels). Calé pour rester au-dessus de 4,5:1 sur les trois fonds. */
+  --faint:  #8a8a92;
+
+  /* Sémantique — volontairement désaturé pour rester dans la DA.
+     Ces deux couleurs portent du sens (avantage / limite, gratuit),
+     on les garde repérables sans casser la neutralité. */
+  --pro:  #8fbf9f;
+  --con:  #c99a9a;
 
   /* Traits */
   --line:       rgba(255, 255, 255, 0.08);
@@ -116,8 +131,17 @@ h1, h2, h3 {
 p { margin: 0 0 1.15em; }
 p:last-child { margin-bottom: 0; }
 
-a { color: var(--accent); text-decoration-color: var(--accent-glow); }
-a:hover { color: var(--accent-soft); }
+/* L'accent étant achromatique, un lien ne peut plus se signaler par
+   la couleur : il porte donc un soulignement visible en permanence. */
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -155,12 +179,12 @@ a:hover { color: var(--accent-soft); }
 .btn--primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #14100a;
+  color: var(--on-accent);
 }
 .btn--primary:hover {
   background: var(--accent-soft);
   border-color: var(--accent-soft);
-  color: #14100a;
+  color: var(--on-accent);
 }
 
 /* Étiquette « section à rédiger » — à supprimer au fil de la rédaction */
@@ -184,7 +208,7 @@ a:hover { color: var(--accent-soft); }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11, 15, 24, 0.82);
+  background: rgba(10, 10, 11, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -544,8 +568,8 @@ a:hover { color: var(--accent-soft); }
   top: 0;
   font-weight: 700;
 }
-.pc__pro::before { content: '✓'; color: #6fcf97; }
-.pc__con::before { content: '✗'; color: #d98a8a; }
+.pc__pro::before { content: '✓'; color: var(--pro); }
+.pc__con::before { content: '✗'; color: var(--con); }
 
 /* -- Encadré recommandation -- */
 .reco {
@@ -974,8 +998,27 @@ a:hover { color: var(--accent-soft); }
 }
 .step p { color: var(--muted); font-size: 0.95rem; }
 
+/* ------------------------------------------------------------
+   SPLIT — deux colonnes de texte/blocs de poids équivalent
+   (section nomade : énergie d'un côté, pilotage de l'autre)
+   ------------------------------------------------------------ */
+.split {
+  margin-top: 3rem;
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+.split__col { min-width: 0; }
+.split__text {
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-bottom: 1.5rem;
+}
+.split__text strong { color: var(--text); }
+
 /* Mention « gratuit » dans le tableau des outils */
-.free { color: #6fcf97; font-weight: 600; }
+.free { color: var(--pro); font-weight: 600; }
 
 /* ------------------------------------------------------------
    ENCADRÉ « KIT DE SURVIE » — conseil pratique, ton terrain.
@@ -1130,6 +1173,9 @@ a:hover { color: var(--accent-soft); }
   /* Niveaux : matériel puis résultats, l'un sous l'autre */
   .level__grid { grid-template-columns: 1fr; }
   .level__result { margin-top: 1rem; }
+
+  /* Section nomade : les deux colonnes s'empilent */
+  .split { grid-template-columns: 1fr; }
 }
 
 /* ------------------------------------------------------------
