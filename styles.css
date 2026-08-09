@@ -413,6 +413,282 @@ a:hover { color: var(--accent-soft); }
 
 
 /* ============================================================
+   6bis. NIVEAUX D'ÉQUIPEMENT
+   ------------------------------------------------------------
+   Un « intercalaire » par niveau. Chaque intercalaire suit
+   toujours le même gabarit :
+     accroche → grille [matériel | ce que ça donne] → « la limite »
+   Les cartes matériel (.gear) réutilisent le langage visuel
+   de .card (section 6) : même surface, même rayon, même hover.
+   ============================================================ */
+
+.level {
+  padding-block: clamp(3.5rem, 9vw, 6rem);
+  border-top: 1px solid var(--line);
+}
+.level:first-of-type { border-top: 0; }
+
+.level__num {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.level__hook {
+  font-size: clamp(1.5rem, 3.6vw, 2.35rem);
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+  margin-bottom: 1.5rem;
+}
+
+.level__intro {
+  color: var(--muted);
+  max-width: var(--measure);
+  font-size: 1.05em;
+  margin-bottom: 3rem;
+}
+
+/* Grille : matériel à gauche (plus large), résultats à droite */
+.level__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  grid-template-columns: 1.5fr 1fr;
+  align-items: start;
+}
+
+/* min-width:0 empêche les longs intitulés de faire déborder la colonne */
+.level__gear, .level__result { min-width: 0; }
+
+/* -- Intitulés de bloc et de famille -- */
+.gear__label {
+  color: var(--faint);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.family {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 2.25rem 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+.family:first-of-type { margin-top: 0; }
+.family__alt {
+  color: var(--faint);
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+/* -- Cartes matériel -- */
+.gear-list { display: grid; gap: 1rem; }
+
+.gear {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.5rem 1.35rem;
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.gear:hover { border-color: var(--line-strong); background: var(--surface-2); }
+
+/* Variante allégée (niveau 1 : pas d'achat) */
+.gear--soft { background: transparent; border-style: dashed; }
+
+.gear__name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.75rem;
+}
+.gear__meta {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.gear__pitch {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.85rem;
+}
+.gear__pitch:last-child { margin-bottom: 0; }
+
+/* -- Pour / contre -- */
+.pc { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.pc li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.pc li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+.pc__pro::before { content: '✓'; color: #6fcf97; }
+.pc__con::before { content: '✗'; color: #d98a8a; }
+
+/* -- Encadré recommandation -- */
+.reco {
+  margin-top: 1.5rem;
+  padding: 1.35rem 1.5rem;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+}
+.reco__label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.reco p:last-child { color: var(--text); font-size: 0.95rem; margin: 0; }
+
+/* -- Sous-bloc (ex. « l'objectif ») -- */
+.subblock {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Note discrète de bas de bloc */
+.note {
+  margin-top: 1.1rem;
+  color: var(--faint);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* -- Colonne « ce que ça donne » -- */
+.result__label {
+  color: var(--faint);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.shot { margin: 0 0 1.5rem; }
+.shot:last-child { margin-bottom: 0; }
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.shot figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Emplacement à remplir : cadre pointillé pour le repérer d'un coup d'œil */
+.shot--todo img { border-style: dashed; border-color: var(--line-strong); }
+
+/* Légende « exemple — objectif visé » */
+.goal {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Attribution — discrète, une ligne sous la légende */
+.credit {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--faint);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+/* -- Ligne « la limite » -- */
+.limit {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding: 1.15rem 1.4rem;
+  border-left: 3px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: var(--measure);
+}
+.limit__tag {
+  display: block;
+  color: var(--faint);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+/* -- Bloc comparatif central (dans le niveau 3) -- */
+.compare {
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  padding-top: clamp(2.5rem, 6vw, 3.5rem);
+  border-top: 1px solid var(--line);
+}
+.compare__title {
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  color: var(--accent);
+  margin-bottom: 1.75rem;
+}
+
+/* -- Encadré-clé : l'argument à retenir -- */
+.keybox {
+  margin-top: 2rem;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+  background: var(--surface-2);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  max-width: var(--measure);
+}
+.keybox__label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+.keybox__lead {
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+.keybox p:last-child { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+
+/* ============================================================
    7. TABLEAU COMPARATIF
    ============================================================ */
 .table-scroll {
@@ -441,9 +717,21 @@ a:hover { color: var(--accent-soft); }
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-.table tbody tr:last-child td { border-bottom: 0; }
-.table tbody td:first-child { color: var(--text); font-weight: 500; }
+.table tbody tr:last-child td,
+.table tbody tr:last-child th { border-bottom: 0; }
 .table tbody td { color: var(--muted); }
+
+/* Première colonne = intitulé de ligne */
+.table tbody th[scope="row"] {
+  color: var(--text);
+  font-weight: 550;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Ligne de verdict — mise en avant */
+.table__verdict th[scope="row"],
+.table__verdict td { background: var(--accent-glow); }
+.win { color: var(--accent); font-weight: 600; }
 
 
 /* ============================================================
@@ -598,6 +886,61 @@ a:hover { color: var(--accent-soft); }
 
   .hero { min-height: auto; }
   .hero__scroll { display: none; }
+
+  /* Niveaux : matériel puis résultats, l'un sous l'autre */
+  .level__grid { grid-template-columns: 1fr; }
+  .level__result { margin-top: 1rem; }
+}
+
+/* ------------------------------------------------------------
+   Tableau comparatif en mobile : on abandonne la grille
+   tabulaire et on empile chaque critère en petite fiche.
+   Les valeurs sont préfixées par l'en-tête de colonne, repris
+   depuis l'attribut data-label posé sur chaque <td>.
+   ------------------------------------------------------------ */
+@media (max-width: 680px) {
+  .table-scroll { border: 0; overflow-x: visible; }
+
+  .table { min-width: 0; display: block; }
+  .table thead { display: none; }
+  .table tbody, .table tr { display: block; }
+
+  .table tbody tr {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 0.85rem;
+    overflow: hidden;
+  }
+
+  .table tbody th[scope="row"] {
+    display: block;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.75rem 1.1rem;
+  }
+
+  .table tbody td {
+    display: block;
+    border-bottom: 1px solid var(--line);
+    padding: 0.85rem 1.1rem;
+  }
+  .table tbody tr td:last-child { border-bottom: 0; }
+
+  /* Rappel de la colonne d'origine */
+  .table tbody td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--faint);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
 }
 
 @media (max-width: 480px) {

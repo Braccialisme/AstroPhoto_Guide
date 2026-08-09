@@ -110,51 +110,446 @@
   </section>
 
   <!-- ============================================================
-       3. LES NIVEAUX D'ÉQUIPEMENT  —  placeholder
+       3. LES NIVEAUX D'ÉQUIPEMENT
+       Trois intercalaires pleine largeur. Format commun :
+         accroche → grille [matériel | ce que ça donne] → « la limite »
        ============================================================ -->
   <section id="niveaux" class="section section--alt">
     <div class="wrap">
       <p class="section__num">02</p>
       <h2 class="section__title reveal">Les niveaux d'équipement</h2>
-      <p class="placeholder-tag reveal">Section à rédiger</p>
-      <!-- TODO: contenu — paliers progressifs smartphone → boîtier → lunette/Newton -->
       <p class="section__intro reveal">
-        Palier 1 : smartphone. Palier 2 : boîtier sur trépied. Palier 3 :
-        lunette ou Newton sur monture équatoriale. Chaque palier ouvre des cibles
-        que le précédent ne permettait pas, et chacun reste utile ensuite.
+        Trois paliers. Chacun ouvre des cibles que le précédent ne permettait
+        pas, et chacun reste utile une fois le suivant atteint. On ne jette rien
+        en route.
       </p>
     </div>
-  </section>
 
-  <!-- ============================================================
-       4. COMPARATIF lunette 80mm vs Newton 200/1000  —  placeholder
-       ============================================================ -->
-  <section id="comparatif" class="section">
-    <div class="wrap">
-      <p class="section__num">03</p>
-      <h2 class="section__title reveal">Lunette 80 mm vs Newton 200/1000</h2>
-      <p class="placeholder-tag reveal">Section à rédiger</p>
-      <!-- TODO: contenu — remplir le tableau, critères à arbitrer -->
-      <div class="table-scroll reveal">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Critère</th>
-              <th scope="col">Lunette 80 mm</th>
-              <th scope="col">Newton 200/1000</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Cibles de prédilection</td><td>—</td><td>—</td></tr>
-            <tr><td>Champ couvert</td><td>—</td><td>—</td></tr>
-            <tr><td>Exigence de monture</td><td>—</td><td>—</td></tr>
-            <tr><td>Transport &amp; installation</td><td>—</td><td>—</td></tr>
-            <tr><td>Entretien</td><td>—</td><td>—</td></tr>
-            <tr><td>Budget indicatif</td><td>—</td><td>—</td></tr>
-          </tbody>
-        </table>
+    <!-- ---------- NIVEAU 1 : le smartphone ---------- -->
+    <article class="level" id="niveau-1">
+      <div class="wrap">
+        <p class="level__num reveal">Niveau 1</p>
+        <h3 class="level__hook reveal">Ce qu'on a déjà dans la poche.</h3>
+        <p class="level__intro reveal">
+          <!-- TODO: développer — apps, mode pro, trépied, poses empilées -->
+          Un téléphone récent en mode manuel, posé sur un trépied à quinze euros.
+          Ça ne remplace rien, mais ça prouve le principe — et c'est avec ça
+          qu'on a fait l'image ci-dessous.
+        </p>
+
+        <div class="level__grid">
+          <div class="level__gear">
+            <div class="gear gear--soft reveal">
+              <h4 class="gear__name">iPhone 15 Pro <span class="gear__meta">déjà possédé — 0 €</span></h4>
+              <p class="gear__pitch">
+                Capture en RAW, pose longue, et un traitement léger derrière.
+                Le coût d'entrée du projet est nul.
+              </p>
+            </div>
+            <p class="note reveal">
+              <!-- TODO: compléter avec la liste d'applications retenue -->
+              Détail des applications et du réglage pas à pas :
+              <a href="#smartphone">section dédiée plus bas</a>.
+            </p>
+          </div>
+
+          <div class="level__result">
+            <p class="result__label reveal">Ce que ça donne</p>
+            <figure class="shot reveal">
+              <img src="samples/Niveau1_Smartphonesstracker.jpeg"
+                   alt="Ciel étoilé photographié au smartphone depuis un trépied, traînées d'étoiles visibles"
+                   loading="lazy" width="2854" height="4032">
+              <figcaption>
+                Notre image — prise à l'iPhone 15 Pro.
+                <span class="credit">© le groupe — image originale</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <p class="limit reveal">
+          <span class="limit__tag">La limite</span>
+          Le capteur est minuscule et l'optique fixe. On voit la Voie lactée, on
+          ne va pas chercher une galaxie.
+        </p>
       </div>
-    </div>
+    </article>
+
+    <!-- ---------- NIVEAU 2 : le boîtier ---------- -->
+    <article class="level" id="niveau-2">
+      <div class="wrap">
+        <p class="level__num reveal">Niveau 2</p>
+        <h3 class="level__hook reveal">
+          Le vrai saut. Un appareil dédié, et des images qui changent de catégorie.
+        </h3>
+        <p class="level__intro reveal">
+          On passe du téléphone à un boîtier photo plein format d'occasion. Vrai
+          fichier RAW, vraies couleurs, vraie dynamique — et un matériel qui
+          resservira bien au-delà de l'astro (photo générale, photogrammétrie).
+          C'est l'achat le plus rentable du projet.
+        </p>
+
+        <div class="level__grid">
+          <!-- Colonne matériel -->
+          <div class="level__gear">
+            <p class="gear__label reveal">Les boîtiers</p>
+            <div class="gear-list reveal">
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sony A7 II
+                  <span class="gear__meta">24 Mpx · ~450-700 €</span>
+                </h4>
+                <p class="gear__pitch">L'entrée plein format.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Le ticket plein format le moins cher, stabilisé.</li>
+                  <li class="pc__con">Capteur 2014, plus bruité en haute sensibilité.</li>
+                </ul>
+              </div>
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sony A7 III
+                  <span class="gear__meta">24 Mpx · ~800 €</span>
+                </h4>
+                <p class="gear__pitch">Le roi du ciel.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Meilleure gestion du bruit, gros photosites idéaux pour le faible signal.</li>
+                  <li class="pc__con">Plus cher, « seulement » 24 Mpx pour recadrer.</li>
+                </ul>
+              </div>
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sony A7R II
+                  <span class="gear__meta">42 Mpx · ~650 €</span>
+                </h4>
+                <p class="gear__pitch">Le malin résolution/prix.</p>
+                <ul class="pc">
+                  <li class="pc__pro">42 Mpx pas cher : recadrage, mosaïques, et double usage photogrammétrie.</li>
+                  <li class="pc__con">Un poil plus de bruit par pixel (le stacking le gomme).</li>
+                </ul>
+              </div>
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sony A7R III
+                  <span class="gear__meta">42 Mpx · ~1000 €</span>
+                </h4>
+                <p class="gear__pitch">Le milieu premium.</p>
+                <ul class="pc">
+                  <li class="pc__pro">42 Mpx + capteur amélioré.</li>
+                  <li class="pc__con">Grignote le budget.</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Encadré recommandation -->
+            <aside class="reco reveal">
+              <p class="reco__label">Notre recommandation</p>
+              <p>
+                <strong>A7 III</strong> si on veut le ciel le plus propre ;
+                <strong>A7R II</strong> si on veut la résolution (et la
+                photogrammétrie) sans exploser le budget. Les deux sont
+                d'excellents choix.
+              </p>
+            </aside>
+
+            <!-- Sous-bloc objectif -->
+            <div class="subblock reveal">
+              <p class="gear__label">L'objectif</p>
+              <div class="gear">
+                <h4 class="gear__name">
+                  Samyang AF 24 mm f/1.8 FE
+                  <span class="gear__meta">~400 €</span>
+                </h4>
+                <p class="gear__pitch">
+                  Compact, mode astro, étoiles nettes jusqu'aux coins.
+                </p>
+                <p class="gear__pitch">
+                  Option ultra grand-angle : <strong>Samyang 14 mm f/2.8</strong>.
+                </p>
+              </div>
+              <p class="note">
+                On reste en monture Sony E : c'est là qu'on trouve le plus
+                d'objectifs lumineux abordables. Nikon Z6 ou Canon RP sont des
+                alternatives valables si on préfère.
+              </p>
+            </div>
+          </div>
+
+          <!-- Colonne résultats -->
+          <div class="level__result">
+            <p class="result__label reveal">Ce que ça donne</p>
+
+            <figure class="shot shot--todo reveal">
+              <img src="samples/placeholder.svg"
+                   alt="Emplacement réservé : paysage étoilé avec la Voie lactée au-dessus d'un premier plan terrestre"
+                   loading="lazy" width="800" height="500">
+              <figcaption>
+                Nightscape — la Voie lactée sur un premier plan.
+                <span class="goal">exemple — objectif visé</span>
+                <!-- TODO: remplacer par une image CC créditée ou une galerie constructeur -->
+                <span class="credit">crédit à renseigner</span>
+              </figcaption>
+            </figure>
+
+            <figure class="shot shot--todo reveal">
+              <img src="samples/placeholder.svg"
+                   alt="Emplacement réservé : grande nébuleuse colorée en champ large"
+                   loading="lazy" width="800" height="500">
+              <figcaption>
+                Une grande nébuleuse en champ large.
+                <span class="goal">exemple — objectif visé</span>
+                <!-- TODO: remplacer par une image CC créditée ou une galerie constructeur -->
+                <span class="credit">crédit à renseigner</span>
+              </figcaption>
+            </figure>
+
+            <figure class="shot shot--todo reveal">
+              <img src="samples/placeholder.svg"
+                   alt="Emplacement réservé : la galaxie d'Andromède photographiée en grand champ"
+                   loading="lazy" width="800" height="500">
+              <figcaption>
+                Andromède en grand champ.
+                <span class="goal">exemple — objectif visé</span>
+                <!-- TODO: remplacer par une image CC créditée ou une galerie constructeur -->
+                <span class="credit">crédit à renseigner</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <p class="limit reveal">
+          <span class="limit__tag">La limite</span>
+          Superbe sur les paysages étoilés et les grands objets (Andromède tient
+          dans le cadre), mais pas de gros plan sur les petites galaxies ni les
+          planètes — c'est le rôle du niveau 3.
+        </p>
+      </div>
+    </article>
+
+    <!-- ---------- NIVEAU 3 : la lunette / le télescope ---------- -->
+    <article class="level" id="niveau-3">
+      <div class="wrap">
+        <p class="level__num reveal">Niveau 3</p>
+        <h3 class="level__hook reveal">
+          L'entrée dans la vraie astrophoto du ciel profond. Le cœur du projet collectif.
+        </h3>
+        <p class="level__intro reveal">
+          Une optique dédiée sur une monture motorisée qui suit la rotation du
+          ciel. C'est ce qui permet les longues poses sur les galaxies et les
+          nébuleuses. C'est aussi le plus gros investissement — d'où l'achat
+          groupé.
+        </p>
+
+        <div class="level__grid">
+          <!-- Colonne matériel : deux philosophies -->
+          <div class="level__gear">
+            <p class="gear__label reveal">Deux philosophies</p>
+
+            <!-- Famille 1 : réfracteurs -->
+            <p class="family reveal">Lunettes apochromatiques <span class="family__alt">réfracteurs</span></p>
+            <div class="gear-list reveal">
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sky-Watcher Evostar 72ED
+                  <span class="gear__meta">72/420 mm · ~400 € (+ aplanisseur ~150 €)</span>
+                </h4>
+                <p class="gear__pitch">L'entrée classique.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Pas chère, communauté énorme, laisse du budget pour la monture.</li>
+                  <li class="pc__con">Aplanisseur à ajouter.</li>
+                </ul>
+              </div>
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sky-Watcher Evostar 80ED
+                  <span class="gear__meta">80/600 mm · ~600 €</span>
+                </h4>
+                <p class="gear__pitch">Un cran de diamètre.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Plus d'allonge et de lumière.</li>
+                  <li class="pc__con">Plus lourde, aplanisseur requis.</li>
+                </ul>
+              </div>
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Askar 71F
+                  <span class="gear__meta">71/490 mm · ~750 €</span>
+                </h4>
+                <p class="gear__pitch">Le plug-and-play.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Correcteur intégré, étoiles nettes plein format, zéro réglage.</li>
+                  <li class="pc__con">Plus chère.</li>
+                </ul>
+              </div>
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Askar FRA400 / William Optics RedCat
+                  <span class="gear__meta">~72/400 mm · ~700-900 €</span>
+                </h4>
+                <p class="gear__pitch">Le grand-champ rapide.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Très lumineuse, champ large.</li>
+                  <li class="pc__con">Focale courte : petites galaxies minuscules.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Famille 2 : réflecteurs -->
+            <p class="family reveal">Newtons <span class="family__alt">réflecteurs</span></p>
+            <div class="gear-list reveal">
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sky-Watcher 150PDS
+                  <span class="gear__meta">150/750 mm · ~280 €</span>
+                </h4>
+                <p class="gear__pitch">Le Newton photo léger.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Diamètre pas cher, plus léger — donc monture plus accessible.</li>
+                  <li class="pc__con">Collimation et correcteur de coma.</li>
+                </ul>
+              </div>
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sky-Watcher 200/1000
+                  <span class="gear__meta">200/1000 mm · ~450 €</span>
+                </h4>
+                <p class="gear__pitch">Le diamètre roi.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Gros diamètre pas cher, excellent en visuel et sur les galaxies, Barlow possible pour le planétaire.</li>
+                  <li class="pc__con">Correcteur de coma, collimation, encombrant, exige une grosse monture chère.</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="note reveal">
+              <!-- TODO: photos produit à sourcer sur les sites revendeurs -->
+              Photos produit à ajouter — à récupérer sur les fiches revendeurs.
+            </p>
+          </div>
+
+          <!-- Colonne résultats -->
+          <div class="level__result">
+            <p class="result__label reveal">Ce que ça donne</p>
+
+            <figure class="shot shot--todo reveal">
+              <img src="samples/placeholder.svg"
+                   alt="Emplacement réservé : nébuleuse photographiée en gros plan"
+                   loading="lazy" width="800" height="500">
+              <figcaption>
+                Une nébuleuse en gros.
+                <span class="goal">exemple — objectif visé</span>
+                <!-- TODO: remplacer par une image CC créditée ou une galerie constructeur -->
+                <span class="credit">crédit à renseigner</span>
+              </figcaption>
+            </figure>
+
+            <figure class="shot shot--todo reveal">
+              <img src="samples/placeholder.svg"
+                   alt="Emplacement réservé : galaxie spirale photographiée au télescope"
+                   loading="lazy" width="800" height="500">
+              <figcaption>
+                Une galaxie.
+                <span class="goal">exemple — objectif visé</span>
+                <!-- TODO: remplacer par une image CC créditée ou une galerie constructeur -->
+                <span class="credit">crédit à renseigner</span>
+              </figcaption>
+            </figure>
+
+            <figure class="shot shot--todo reveal">
+              <img src="samples/placeholder.svg"
+                   alt="Emplacement réservé : amas d'étoiles résolu au télescope"
+                   loading="lazy" width="800" height="500">
+              <figcaption>
+                Un amas.
+                <span class="goal">exemple — objectif visé</span>
+                <!-- TODO: remplacer par une image CC créditée ou une galerie constructeur -->
+                <span class="credit">crédit à renseigner</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- ---- Tableau comparatif central : le « quoi choisir » ---- -->
+        <div class="compare" id="comparatif">
+          <h4 class="compare__title reveal">Lunette 80ED ou Newton 200/1000 ?</h4>
+
+          <div class="table-scroll reveal">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Critère</th>
+                  <th scope="col">Lunette 80ED</th>
+                  <th scope="col">Newton 200/1000</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Diamètre / focale</th>
+                  <td data-label="Lunette 80ED">80 mm / 600 mm</td>
+                  <td data-label="Newton 200/1000">200 mm / 1000 mm</td>
+                </tr>
+                <tr>
+                  <th scope="row">On shoote quoi</th>
+                  <td data-label="Lunette 80ED">Nébuleuses, grandes galaxies, grand champ</td>
+                  <td data-label="Newton 200/1000">Galaxies plus petites, visuel poussé, planétaire (Barlow)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Facilité</th>
+                  <td data-label="Lunette 80ED">Très facile, rien à régler</td>
+                  <td data-label="Newton 200/1000">Collimation, correcteur, apprentissage</td>
+                </tr>
+                <tr>
+                  <th scope="row">Monture nécessaire</th>
+                  <td data-label="Lunette 80ED">Légère, abordable</td>
+                  <td data-label="Newton 200/1000">Lourde, coûteuse</td>
+                </tr>
+                <tr>
+                  <th scope="row">Impact budget total</th>
+                  <td data-label="Lunette 80ED">Contenu</td>
+                  <td data-label="Newton 200/1000">Explose (à cause de la monture)</td>
+                </tr>
+                <tr class="table__verdict">
+                  <th scope="row">Verdict projet</th>
+                  <td data-label="Lunette 80ED"><span class="win">✅ Le bon premier choix groupé</span></td>
+                  <td data-label="Newton 200/1000">Évolution future</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Encadré-clé : l'argument central de la section -->
+          <aside class="keybox reveal">
+            <p class="keybox__label">Le point à retenir</p>
+            <p class="keybox__lead">
+              Sur un budget groupé d'environ 1500 € monture comprise, la lunette
+              gagne — parce que le Newton 200/1000 impose une monture qui mange à
+              elle seule tout le budget.
+            </p>
+            <p>
+              Le vrai investissement en astrophoto, ce n'est pas l'optique :
+              <strong>c'est la monture</strong>. Une monture qui suit mal ruine la
+              meilleure lunette.
+            </p>
+          </aside>
+        </div>
+
+        <p class="limit reveal">
+          <span class="limit__tag">La limite</span>
+          Le ciel profond en grand, oui. Le gros plan planétaire, non — c'est un
+          tout autre matériel (voir <a href="#planetaire">la section dédiée</a>).
+        </p>
+      </div>
+    </article>
   </section>
 
   <!-- ============================================================
@@ -162,7 +557,7 @@
        ============================================================ -->
   <section id="planetaire" class="section section--alt">
     <div class="wrap">
-      <p class="section__num">04</p>
+      <p class="section__num">03</p>
       <div class="callout reveal">
         <h2 class="callout__title">Le planétaire, un autre délire</h2>
         <p class="placeholder-tag">Section à rédiger</p>
@@ -181,7 +576,7 @@
        ============================================================ -->
   <section id="spots" class="section">
     <div class="wrap">
-      <p class="section__num">05</p>
+      <p class="section__num">04</p>
       <h2 class="section__title reveal">Où on shoote</h2>
       <p class="placeholder-tag reveal">Section à rédiger</p>
       <!-- TODO: contenu — liste des spots, temps de trajet, qualité de ciel (échelle Bortle) -->
@@ -197,7 +592,7 @@
        ============================================================ -->
   <section id="smartphone" class="section section--alt">
     <div class="wrap">
-      <p class="section__num">06</p>
+      <p class="section__num">05</p>
       <h2 class="section__title reveal">Le smartphone : débloquer l'optique</h2>
       <p class="placeholder-tag reveal">Section à rédiger</p>
       <!-- TODO: contenu — apps de capture, mode pro, RAW, workflow -->
@@ -214,7 +609,7 @@
        ============================================================ -->
   <section id="traitement" class="section">
     <div class="wrap">
-      <p class="section__num">07</p>
+      <p class="section__num">06</p>
       <h2 class="section__title reveal">Le traitement</h2>
       <p class="placeholder-tag reveal">Section à rédiger</p>
       <!-- TODO: contenu — de la capture à l'image finale, en surface (empilement, étirement, couleurs) -->
@@ -231,7 +626,7 @@
        ============================================================ -->
   <section id="budgets" class="section section--alt">
     <div class="wrap">
-      <p class="section__num">08</p>
+      <p class="section__num">07</p>
       <h2 class="section__title reveal">Les budgets</h2>
       <p class="placeholder-tag reveal">Section à rédiger</p>
       <!-- TODO: contenu — palier d'entrée, montée optionnelle, répartition entre co-financeurs -->
@@ -260,7 +655,7 @@
        ============================================================ -->
   <section id="technique" class="section">
     <div class="wrap">
-      <p class="section__num">09</p>
+      <p class="section__num">08</p>
       <h2 class="section__title reveal">Pour aller plus loin</h2>
       <p class="section__intro reveal">
         Le détail technique, pour ceux que ça intéresse. Rien d'indispensable
