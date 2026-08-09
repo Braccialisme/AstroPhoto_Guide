@@ -28,6 +28,7 @@
       <li><a href="#poses">Poses</a></li>
       <li><a href="#traitement">Traitement</a></li>
       <li><a href="#budgets">Budgets</a></li>
+      <li><a href="#rejoindre">Rejoindre</a></li>
     </ul>
   </nav>
 </header>
@@ -38,6 +39,12 @@
        1. HERO
        ============================================================ -->
   <section class="hero">
+    <!-- Fond photographique + voile sombre. L'image est décorative :
+         le texte du hero ne dépend pas d'elle, d'où aria-hidden. -->
+    <div class="hero__media" aria-hidden="true">
+      <img src="samples/nightscape-voie-lactee.jpg" alt=""
+           width="1339" height="1600" fetchpriority="high">
+    </div>
     <div class="hero__stars" aria-hidden="true"></div>
     <div class="wrap hero__content reveal">
       <p class="hero__kicker">Projet d'achat groupé — astrophotographie</p>
@@ -55,6 +62,10 @@
         <a class="btn" href="#budgets">Voir les budgets</a>
       </div>
     </div>
+    <p class="hero__credit">
+      © Astrobond — <a href="https://commons.wikimedia.org/wiki/File:The_Milky_Way_in_the_mountains_of_the_Karaganda_region,_Kazakhstan.jpg">Wikimedia Commons</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    </p>
     <div class="hero__scroll" aria-hidden="true">↓</div>
   </section>
 
@@ -190,7 +201,7 @@
             <p class="result__label reveal">Ce que ça donne</p>
             <figure class="shot reveal">
               <img src="samples/Niveau1_Smartphonesstracker.jpeg"
-                   alt="Ciel étoilé photographié au smartphone depuis un trépied, traînées d'étoiles visibles"
+                   alt="Ciel étoilé et Voie lactée photographiés au smartphone sur trépied"
                    loading="lazy" width="2854" height="4032">
               <figcaption>
                 Notre image — prise à l'iPhone 15 Pro.
@@ -233,7 +244,8 @@
           Le vrai saut. Un appareil dédié, et des images qui changent de catégorie.
         </h3>
         <p class="level__intro reveal">
-          On passe du téléphone à un boîtier photo plein format d'occasion. Vrai
+          On passe du téléphone à un boîtier dédié d'occasion (APS-C ou plein
+          format). Vrai
           fichier RAW, vraies couleurs, vraie dynamique — et un matériel qui
           resservira bien au-delà de l'astro (photo générale, photogrammétrie).
           C'est l'achat le plus rentable du projet.
@@ -244,6 +256,19 @@
           <div class="level__gear">
             <p class="gear__label reveal">Les boîtiers</p>
             <div class="gear-list reveal">
+
+              <div class="gear">
+                <h4 class="gear__name">
+                  Sony A6000
+                  <span class="gear__meta">APS-C, 24 Mpx · ~250-300 €</span>
+                </h4>
+                <p class="gear__pitch">L'entrée légère et maligne.</p>
+                <ul class="pc">
+                  <li class="pc__pro">Minuscule, parfait en nomade, monte bien en ISO.</li>
+                  <li class="pc__pro">La mosaïque compense la résolution.</li>
+                  <li class="pc__con">Capteur APS-C, plus petit qu'un plein format.</li>
+                </ul>
+              </div>
 
               <div class="gear">
                 <h4 class="gear__name">
@@ -281,18 +306,6 @@
                 </ul>
               </div>
 
-              <div class="gear">
-                <h4 class="gear__name">
-                  Sony A7R III
-                  <span class="gear__meta">42 Mpx · ~1000 €</span>
-                </h4>
-                <p class="gear__pitch">Le milieu premium.</p>
-                <ul class="pc">
-                  <li class="pc__pro">42 Mpx + capteur amélioré.</li>
-                  <li class="pc__con">Grignote le budget.</li>
-                </ul>
-              </div>
-
             </div>
 
             <!-- Encadré recommandation -->
@@ -322,9 +335,8 @@
                 </p>
               </div>
               <p class="note">
-                On reste en monture Sony E : c'est là qu'on trouve le plus
-                d'objectifs lumineux abordables. Nikon Z6 ou Canon RP sont des
-                alternatives valables si on préfère.
+                Tout reste en monture Sony E : un seul écosystème d'objectifs,
+                du premier boîtier au dernier.
               </p>
             </div>
           </div>
@@ -377,22 +389,14 @@
           </div>
         </div>
 
-        <!-- Tarifs — la piste reflex ouvre, les Sony sont la montée en gamme -->
+        <!-- Tarifs — l'A6000 ouvre, le plein format est la montée en gamme -->
         <div class="configs reveal">
           <p class="configs__label">Configurations</p>
           <ul class="configs__list">
             <li class="config">
-              <span class="config__name">Entrée reflex</span>
-              <span class="config__desc">
-                Reflex APS-C d'occasion (Canon 700D/800D ou Nikon D5300/D5600)
-                + objectif lumineux (Samyang 16 mm f/2 ou 24 mm)
-              </span>
-              <span class="config__price">~250-400 €</span>
-            </li>
-            <li class="config">
               <span class="config__name">Entrée</span>
-              <span class="config__desc">Sony A7 II + Samyang 24 f/1.8</span>
-              <span class="config__price">~900 €</span>
+              <span class="config__desc">Sony A6000 + Samyang 24 f/1.8</span>
+              <span class="config__price">~700 €</span>
             </li>
             <li class="config config--reco">
               <span class="config__name">Recommandée</span>
@@ -410,18 +414,19 @@
           </ul>
 
           <p class="note">
-            Un reflex d'occasion suffit largement pour débuter, surtout en
-            visant la mosaïque (assembler plusieurs cadres pour multiplier la
-            résolution finale). Le plein format Sony est un confort, pas une
+            Un boîtier APS-C d'occasion suffit largement pour débuter, surtout
+            en visant la mosaïque (assembler plusieurs cadres pour multiplier
+            la résolution finale). Le plein format est un confort, pas une
             obligation.
           </p>
 
           <aside class="mount">
             <p class="mount__label">Comment choisir</p>
             <p>
-              <strong>Reflex APS-C</strong> pour le ticket d'entrée le plus
-              bas ; <strong>Sony plein format</strong> pour le double usage
-              photogrammétrie et le meilleur capteur.
+              <strong>A6000 (APS-C)</strong> pour le ticket d'entrée le plus
+              bas et le poids plume ; <strong>A7R II / A7 III (plein
+              format)</strong> pour la résolution, la photogrammétrie et le
+              meilleur capteur.
             </p>
           </aside>
         </div>
@@ -605,46 +610,46 @@
 
         <!-- ---- Tableau comparatif central : le « quoi choisir » ---- -->
         <div class="compare" id="comparatif">
-          <h4 class="compare__title reveal">Lunette 80ED ou Newton 200/1000 ?</h4>
+          <h4 class="compare__title reveal">Lunette 72ED ou Newton 200/1000 ?</h4>
 
           <div class="table-scroll reveal">
             <table class="table">
               <thead>
                 <tr>
                   <th scope="col">Critère</th>
-                  <th scope="col">Lunette 80ED</th>
+                  <th scope="col">Lunette 72ED</th>
                   <th scope="col">Newton 200/1000</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Diamètre / focale</th>
-                  <td data-label="Lunette 80ED">80 mm / 600 mm</td>
+                  <td data-label="Lunette 72ED">72 mm / 420 mm</td>
                   <td data-label="Newton 200/1000">200 mm / 1000 mm</td>
                 </tr>
                 <tr>
                   <th scope="row">On shoote quoi</th>
-                  <td data-label="Lunette 80ED">Nébuleuses, grandes galaxies, grand champ</td>
+                  <td data-label="Lunette 72ED">Nébuleuses, grandes galaxies, grand champ</td>
                   <td data-label="Newton 200/1000">Galaxies plus petites, visuel poussé, planétaire (Barlow)</td>
                 </tr>
                 <tr>
                   <th scope="row">Facilité</th>
-                  <td data-label="Lunette 80ED">Très facile, rien à régler</td>
+                  <td data-label="Lunette 72ED">Très facile, rien à régler</td>
                   <td data-label="Newton 200/1000">Collimation, correcteur, apprentissage</td>
                 </tr>
                 <tr>
                   <th scope="row">Monture nécessaire</th>
-                  <td data-label="Lunette 80ED">Légère, abordable</td>
+                  <td data-label="Lunette 72ED">Légère, abordable</td>
                   <td data-label="Newton 200/1000">Lourde, coûteuse</td>
                 </tr>
                 <tr>
                   <th scope="row">Impact budget total</th>
-                  <td data-label="Lunette 80ED">Contenu</td>
+                  <td data-label="Lunette 72ED">Contenu</td>
                   <td data-label="Newton 200/1000">Explose (à cause de la monture)</td>
                 </tr>
                 <tr class="table__verdict">
                   <th scope="row">Verdict projet</th>
-                  <td data-label="Lunette 80ED"><span class="win">✅ Le bon premier choix groupé</span></td>
+                  <td data-label="Lunette 72ED"><span class="win">✅ Le bon premier choix groupé</span></td>
                   <td data-label="Newton 200/1000">Évolution future</td>
                 </tr>
               </tbody>
@@ -655,9 +660,9 @@
           <aside class="keybox reveal">
             <p class="keybox__label">Le point à retenir</p>
             <p class="keybox__lead">
-              Sur un budget groupé d'environ 1500 € monture comprise, la lunette
-              gagne — parce que le Newton 200/1000 impose une monture qui mange à
-              elle seule tout le budget.
+              Pour rester nomade et abordable, la lunette gagne — le Newton
+              200/1000 impose une monture lourde et coûteuse qui casse la
+              portabilité et double à elle seule le budget monture.
             </p>
             <p>
               Le vrai investissement en astrophoto, ce n'est pas l'optique :
@@ -937,14 +942,13 @@
           <aside class="keybox reveal">
             <p class="keybox__label">Le prix du ticket</p>
             <p class="keybox__lead">
-              Un setup nomade complet, guidage compris, à partir de
-              ~1200-1500 €.
+              Un setup nomade complet, guidage compris, à partir de ~2000 €.
             </p>
             <p>
               C'est le plancher, en occasion et en entrée de gamme : A6000 +
-              AZ-GTi + 72ED. La config qu'on recommande vraiment est détaillée
-              plus bas. Le même socle accueillera ensuite de meilleures
-              optiques.
+              AZ-GTi + 72ED + ASIAIR + guidage + batterie. La config qu'on
+              recommande vraiment est détaillée plus bas. Le même socle
+              accueillera ensuite de meilleures optiques.
             </p>
           </aside>
         </div>
@@ -1041,7 +1045,7 @@
               <p class="gear__step">Cran 1</p>
               <h4 class="gear__name">
                 Tracker
-                <span class="gear__meta">~200-350 € · charge ~5 kg</span>
+                <span class="gear__meta">~200-350 € · boîtier + objectif</span>
               </h4>
               <p class="gear__pitch">
                 Star Adventurer 2i ou Move Shoot Move. Le plus léger.
@@ -1634,20 +1638,6 @@
               </p>
             </div>
           </details>
-
-          <!-- Volets encore à écrire, conservés depuis l'ancienne section -->
-          <details class="acc">
-            <summary class="acc__head">Suivi, monture et mise en station</summary>
-            <div class="acc__body"><p>TODO : contenu.</p></div>
-          </details>
-          <details class="acc">
-            <summary class="acc__head">Temps de pose, gain et bruit</summary>
-            <div class="acc__body"><p>TODO : contenu.</p></div>
-          </details>
-          <details class="acc">
-            <summary class="acc__head">Filtres et pollution lumineuse</summary>
-            <div class="acc__body"><p>TODO : contenu.</p></div>
-          </details>
         </div>
       </div>
     </div>
@@ -1693,7 +1683,7 @@
         <div class="tier tier--featured">
           <p class="tier__badge">Recommandé</p>
           <p class="tier__label">Palier 3 — Setup nomade guidé</p>
-          <p class="tier__price">~1800-2900 €</p>
+          <p class="tier__price">~2000-2900 €</p>
           <p class="tier__gear">
             A6000 ou A7R II + Samyang + lunette 72ED + Star Adventurer GTi ou
             AZ-GTi + ASIAIR + guidage + batterie. Selon le boîtier et la
@@ -1723,6 +1713,31 @@
         Pas de dépense perdue, pas d'abonnement, un matériel qui prend de la
         valeur d'usage à chaque sortie.
       </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11. CE QU'ON CHERCHE — l'appel, en clôture.
+       Bloc isolé : pour le retirer, supprimer cette section et son
+       entrée de nav, rien d'autre n'en dépend.
+       ============================================================ -->
+  <section id="rejoindre" class="section">
+    <div class="wrap">
+      <p class="section__num">11</p>
+      <aside class="pitch reveal">
+        <p class="pitch__label">Ce qu'on cherche</p>
+        <p class="pitch__lead">
+          <!-- TODO: remplacer les crochets par les vrais nombres -->
+          On est <mark class="fill">[X]</mark> pour l'instant. On cherche
+          <mark class="fill">[Y]</mark> co-financeurs prêts à mettre
+          <mark class="fill">~[Z] €</mark> chacun pour démarrer au palier
+          <mark class="fill">[N]</mark>.
+        </p>
+        <p class="pitch__note">
+          Le matériel est partagé, réutilisable, et prend de la valeur d'usage
+          à chaque sortie.
+        </p>
+      </aside>
     </div>
   </section>
 

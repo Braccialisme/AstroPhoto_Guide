@@ -261,6 +261,57 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
   overflow: hidden;
 }
 
+/* ------------------------------------------------------------
+   Fond photographique du hero.
+   Le voile sombre est volontairement dense (jusqu'à 88 %) :
+   le titre reste en blanc pur et doit rester lisible quelle que
+   soit la zone de l'image qui passe derrière lui.
+   ------------------------------------------------------------ */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+/* Voile : plus dense en bas, pour le raccord avec le corps de page */
+.hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(10, 10, 11, 0.72) 0%,
+      rgba(10, 10, 11, 0.78) 45%,
+      rgba(10, 10, 11, 0.92) 85%,
+      var(--bg) 100%),
+    linear-gradient(to right,
+      rgba(10, 10, 11, 0.55) 0%,
+      rgba(10, 10, 11, 0.15) 70%);
+}
+
+/* Crédit de l'image de fond — discret, en pied de hero */
+.hero__credit {
+  position: absolute;
+  right: clamp(1.25rem, 5vw, 3rem);
+  bottom: 1.1rem;
+  z-index: 2;
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  max-width: 60%;
+  text-align: right;
+}
+.hero__credit a { color: var(--muted); text-decoration-color: rgba(255,255,255,0.25); }
+.hero__credit a:hover { color: var(--accent); }
+
 /* Champ d'étoiles + halo — purement décoratif, très discret */
 .hero__stars {
   position: absolute;
@@ -277,7 +328,9 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
     radial-gradient(1px 1px   at 92% 38%, rgba(255,255,255,0.28), transparent),
     radial-gradient(1px 1px   at 58% 88%, rgba(255,255,255,0.25), transparent),
     radial-gradient(ellipse 70% 55% at 50% 0%, var(--accent-glow), transparent 70%);
-  opacity: 0.9;
+  /* Discret depuis l'ajout du fond photo : il ne sert plus qu'à
+     poser le halo haut, les étoiles dessinées feraient doublon. */
+  opacity: 0.35;
 }
 
 /* Fondu vers le corps de page */
@@ -1160,6 +1213,16 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
   font-size: 0.95rem;
   opacity: 0.75;
   margin: 0;
+}
+
+/* Champ à compléter par le groupe — se voit, se cherche au Ctrl+F */
+.fill {
+  background: rgba(10, 10, 11, 0.12);
+  color: inherit;
+  border-bottom: 2px dashed rgba(10, 10, 11, 0.45);
+  border-radius: 3px;
+  padding: 0 0.25em;
+  font-weight: 700;
 }
 
 /* ------------------------------------------------------------
