@@ -1045,43 +1045,101 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
    ------------------------------------------------------------ */
 .showcase .split { margin-top: 3.5rem; }
 
-/* Le contenu du sac : une ligne par élément, icône + nom + rôle */
-.bag {
-  list-style: none;
-  margin: 0 0 1rem;
-  padding: 0;
+/* ------------------------------------------------------------
+   BRICKS — une carte par brique du setup : rôle, puis options
+   chiffrées. Les lignes réutilisent le composant .config, mais
+   en disposition compacte (nom + prix sur une ligne, description
+   dessous) : les cartes sont trop étroites pour trois colonnes.
+   ------------------------------------------------------------ */
+.bricks__intro { max-width: var(--measure); margin-bottom: 2rem; }
+
+.bricks {
   display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  align-items: start;
 }
 
-.bag__item {
-  display: grid;
-  grid-template-columns: 2.4rem 1fr;
-  gap: 0.15rem 0.9rem;
-  align-items: baseline;
+.brick {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.1rem 1.3rem;
+  padding: 1.7rem 1.6rem;
+  min-width: 0;
   transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease);
 }
-.bag__item:hover { border-color: var(--line-strong); background: var(--surface-2); }
+.brick:hover { border-color: var(--line-strong); background: var(--surface-2); }
 
-.bag__icon {
-  grid-row: 1 / span 2;
-  display: grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  color: var(--accent);
-  font-size: 1rem;
-  align-self: start;
+.brick__name {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.6rem;
 }
-.bag__name { font-weight: 600; font-size: 0.98rem; color: var(--text); }
-.bag__role { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.brick__scope {
+  color: var(--faint);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.brick__role {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Lignes d'option compactes à l'intérieur d'une brique */
+.brick .config {
+  grid-template-columns: 1fr auto;
+  gap: 0.3rem 1rem;
+}
+.brick .config__name  { grid-column: 1; grid-row: 1; }
+.brick .config__price { grid-column: 2; grid-row: 1; font-size: 0.98rem; }
+.brick .config__desc  { grid-column: 1 / -1; grid-row: 2; }
+.brick .note { margin-top: 1.25rem; }
+.brick .mount { margin-top: 1.35rem; }
+
+/* ------------------------------------------------------------
+   PITCH — l'encadré fort : la configuration qu'on propose de
+   financer. Le seul bloc de la page en inversion de contraste.
+   ------------------------------------------------------------ */
+.pitch {
+  margin-top: 2.5rem;
+  padding: clamp(1.8rem, 4.5vw, 2.6rem);
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: var(--radius);
+  max-width: var(--measure);
+}
+.pitch__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.9rem;
+}
+.pitch__lead {
+  font-size: clamp(1.05rem, 2.3vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+.pitch__price {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.9rem;
+}
+.pitch__note {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin: 0;
+}
 
 /* ------------------------------------------------------------
    LADDER — échelle de durées de pose. Trois barreaux de poids
@@ -1290,8 +1348,8 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
   /* Section nomade : les deux colonnes s'empilent */
   .split { grid-template-columns: 1fr; }
 
-  /* Contenu du sac : une colonne */
-  .bag { grid-template-columns: 1fr; }
+  /* Briques du setup : une colonne */
+  .bricks { grid-template-columns: 1fr; }
 }
 
 /* ------------------------------------------------------------
