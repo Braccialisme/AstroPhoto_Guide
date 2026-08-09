@@ -187,19 +187,6 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
   color: var(--on-accent);
 }
 
-/* Étiquette « section à rédiger » — à supprimer au fil de la rédaction */
-.placeholder-tag {
-  display: inline-block;
-  margin: 0 0 1.5rem;
-  padding: 0.25rem 0.7rem;
-  border: 1px dashed var(--line-strong);
-  border-radius: 999px;
-  color: var(--faint);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 
 /* ============================================================
    3. NAVIGATION (sticky, discrète)
@@ -925,18 +912,41 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
 .tiers {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  align-items: stretch;
+  margin-top: 1rem;   /* laisse la place au badge en débord */
+  margin-bottom: 2.5rem;
 }
 .tier {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.9rem 1.7rem;
+  display: flex;
+  flex-direction: column;
 }
 .tier--featured {
   border-color: var(--accent);
   background: var(--surface-2);
 }
+
+/* Badge « recommandé » du palier mis en avant */
+.tier__badge {
+  position: absolute;
+  top: -0.7rem;
+  left: 1.7rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  margin: 0;
+}
+
 .tier__label {
   color: var(--muted);
   font-size: 0.8rem;
@@ -945,13 +955,24 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
   margin-bottom: 0.75rem;
 }
 .tier__price {
-  font-size: 2.2rem;
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
   font-weight: 650;
   letter-spacing: -0.03em;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 1rem;
 }
-.tier__desc { color: var(--muted); font-size: 0.95rem; }
+
+/* Le contenu matériel du palier, détaché de la promesse */
+.tier__gear {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.tier__desc { color: var(--muted); font-size: 0.95rem; margin-top: auto; }
 
 
 /* ============================================================
