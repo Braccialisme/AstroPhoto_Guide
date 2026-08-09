@@ -21,11 +21,10 @@
       <li><a href="#niveaux">Niveaux</a></li>
       <li><a href="#comparatif">Comparatif</a></li>
       <li><a href="#planetaire">Planétaire</a></li>
-      <li><a href="#spots">Spots</a></li>
-      <li><a href="#smartphone">Smartphone</a></li>
+      <li><a href="#spots">Lieux</a></li>
+      <li><a href="#smartphone">Apps</a></li>
       <li><a href="#traitement">Traitement</a></li>
       <li><a href="#budgets">Budgets</a></li>
-      <li><a href="#technique">Technique</a></li>
     </ul>
   </nav>
 </header>
@@ -780,36 +779,277 @@
   </section>
 
   <!-- ============================================================
-       7. LE SMARTPHONE  —  placeholder
+       7. LE SMARTPHONE — apps de capture
        ============================================================ -->
   <section id="smartphone" class="section section--alt">
     <div class="wrap">
       <p class="section__num">05</p>
-      <h2 class="section__title reveal">Le smartphone : débloquer l'optique</h2>
-      <p class="placeholder-tag reveal">Section à rédiger</p>
-      <!-- TODO: contenu — apps de capture, mode pro, RAW, workflow -->
+      <h2 class="section__title reveal">Tirer le maximum du téléphone</h2>
       <p class="section__intro reveal">
-        Un téléphone récent en mode manuel capture déjà la Voie lactée. Les
-        bonnes applications et un trépied à quinze euros font l'essentiel du
-        travail.
+        L'iPhone 15 Pro a un capteur qui shoote en RAW 48 Mpx — une vraie base.
+        Le problème ? L'app photo native ne laisse pas régler l'exposition, la
+        sensibilité (ISO) ni la mise au point manuellement, alors que l'astro en
+        a absolument besoin. La solution : des applications tierces qui
+        débloquent ce que l'optique sait déjà faire.
       </p>
+
+      <p class="gear__label reveal">Les apps</p>
+      <div class="gear-list gear-list--wide reveal">
+
+        <div class="gear">
+          <h4 class="gear__name">
+            Halide
+            <span class="gear__meta">le contrôle total</span>
+          </h4>
+          <p class="gear__pitch">
+            Réglage manuel de l'exposition, des ISO, de la mise au point,
+            capture en RAW 48 Mpx.
+          </p>
+          <ul class="pc">
+            <li class="pc__pro">On maîtrise enfin tout.</li>
+            <li class="pc__con">Ne fait que capturer — pas d'empilement.</li>
+          </ul>
+        </div>
+
+        <div class="gear">
+          <h4 class="gear__name">
+            AstroShader
+            <span class="gear__meta">l'empilement sur le terrain</span>
+          </h4>
+          <p class="gear__pitch">
+            Empile les poses en direct et sort une image traitée.
+          </p>
+          <ul class="pc">
+            <li class="pc__pro">Résultat immédiat, export possible des poses brutes.</li>
+            <li class="pc__con">Réglages peu clairs, gestion de la focale absente.</li>
+          </ul>
+        </div>
+
+        <div class="gear">
+          <h4 class="gear__name">
+            NightCap
+            <span class="gear__meta">les modes astro automatiques</span>
+          </h4>
+          <p class="gear__pitch">
+            Modes longue pose et filés d'étoiles clés en main.
+          </p>
+          <ul class="pc">
+            <li class="pc__pro">Simple.</li>
+            <li class="pc__con">Moins de contrôle fin.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note reveal">
+        Pour la Lune, l'app native suffit (objet très brillant). C'est pour le
+        ciel faible que les apps tierces deviennent indispensables.
+      </p>
+
+      <figure class="shot shot--todo shot--wide reveal">
+        <img src="samples/placeholder.svg"
+             alt="Emplacement réservé : capture d'écran de l'interface de réglage manuel d'une application photo sur iPhone"
+             loading="lazy" width="800" height="500">
+        <figcaption>
+          L'interface de réglage manuel — exposition, ISO et mise au point.
+          <!-- TODO: déposer le fichier, la légende reste telle quelle -->
+          <span class="credit">crédit à renseigner</span>
+        </figcaption>
+      </figure>
+
+      <!-- Encadré pratique : le transfert iPhone vers Linux -->
+      <aside class="survival reveal">
+        <p class="survival__label">Kit de survie</p>
+        <p>
+          Transférer ses photos de l'iPhone vers un PC Linux sans passer par
+          iCloud est un calvaire connu. Deux solutions qui marchent : un câble
+          USB avec les outils <strong>libimobiledevice</strong> (<code>ifuse</code>),
+          ou <strong>LocalSend</strong> — une app gratuite et open-source qui
+          envoie les fichiers en Wi-Fi entre téléphone et PC, tous systèmes.
+          À installer avant la première sortie.
+        </p>
+      </aside>
     </div>
   </section>
 
   <!-- ============================================================
-       8. LE TRAITEMENT  —  placeholder
+       8. LE TRAITEMENT — de la capture à l'image
+          Les trois étapes en surface, puis les outils, puis les
+          accordéons techniques (ancre #technique conservée).
        ============================================================ -->
   <section id="traitement" class="section">
     <div class="wrap">
       <p class="section__num">06</p>
-      <h2 class="section__title reveal">Le traitement</h2>
-      <p class="placeholder-tag reveal">Section à rédiger</p>
-      <!-- TODO: contenu — de la capture à l'image finale, en surface (empilement, étirement, couleurs) -->
+      <h2 class="section__title reveal">Le traitement, sans se prendre la tête</h2>
       <p class="section__intro reveal">
-        Une image finale n'est jamais une seule photo : c'est une centaine de
-        poses additionnées, puis révélées. On explique le principe sans rentrer
-        dans la technique.
+        Une photo d'astro finie n'est jamais une seule prise de vue. C'est
+        l'assemblage de dizaines de poses, nettoyées et révélées par ordinateur.
+        Ça a l'air technique, mais les logiciels font le gros du travail — et
+        ils sont gratuits.
       </p>
+
+      <!-- Les trois étapes -->
+      <p class="gear__label reveal">Les 3 étapes</p>
+      <ol class="steps reveal">
+        <li class="step">
+          <p class="step__num">1</p>
+          <h3 class="step__title">On capture beaucoup</h3>
+          <p>
+            Des dizaines de poses du même objet, plus quelques images « de
+            calibration » qui servent à nettoyer les défauts du capteur. Le
+            secret n'est pas une pose magique, c'est le temps cumulé : quelques
+            minutes donnent une tache, une heure donne une galaxie.
+          </p>
+        </li>
+        <li class="step">
+          <p class="step__num">2</p>
+          <h3 class="step__title">On empile</h3>
+          <p>
+            Le logiciel superpose toutes les poses : le bruit (le grain
+            aléatoire) s'annule, le signal (l'objet) ressort. C'est ça, le
+            « stacking » — la formule magique de l'astrophoto.
+          </p>
+        </li>
+        <li class="step">
+          <p class="step__num">3</p>
+          <h3 class="step__title">On révèle</h3>
+          <p>
+            On efface les dégradés de pollution lumineuse, on étire doucement la
+            lumière pour faire apparaître le faible, on remonte les couleurs.
+            Les couleurs sont là dès le départ, cachées ; on ne les invente pas,
+            on les dévoile.
+          </p>
+        </li>
+      </ol>
+
+      <figure class="shot shot--todo shot--wide reveal">
+        <img src="samples/placeholder.svg"
+             alt="Emplacement réservé : comparaison entre une pose brute et l'image finale après empilement et traitement"
+             loading="lazy" width="800" height="500">
+        <figcaption>
+          Avant / après — une pose brute, puis le résultat empilé et révélé.
+          <!-- TODO: déposer le fichier, la légende reste telle quelle -->
+          <span class="credit">crédit à renseigner</span>
+        </figcaption>
+      </figure>
+
+      <!-- Les outils -->
+      <p class="gear__label reveal">Les outils</p>
+      <div class="table-scroll reveal">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Outil</th>
+              <th scope="col">Rôle</th>
+              <th scope="col">Coût</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Siril</th>
+              <td data-label="Rôle">Empilement + traitement de base</td>
+              <td data-label="Coût"><span class="free">Gratuit</span></td>
+            </tr>
+            <tr>
+              <th scope="row">GraXpert</th>
+              <td data-label="Rôle">Nettoyage des dégradés + débruitage</td>
+              <td data-label="Coût"><span class="free">Gratuit</span></td>
+            </tr>
+            <tr>
+              <th scope="row">StarNet</th>
+              <td data-label="Rôle">Sépare les étoiles du reste</td>
+              <td data-label="Coût"><span class="free">Gratuit</span></td>
+            </tr>
+            <tr>
+              <th scope="row">GIMP / Affinity Photo</th>
+              <td data-label="Rôle">Finition</td>
+              <td data-label="Coût"><span class="free">Gratuit</span> / achat unique</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="keybox reveal">
+        <p class="keybox__label">Ce que ça change pour le groupe</p>
+        <p class="keybox__lead">
+          Aucun abonnement, aucune dépendance à Adobe.
+        </p>
+        <p>
+          Toute la chaîne tient avec des logiciels libres ou à achat unique —
+          un vrai atout pour un projet collectif.
+        </p>
+      </aside>
+
+      <!-- ---- Pour aller plus loin : replié par défaut ---- -->
+      <div class="deeper" id="technique">
+        <h3 class="compare__title reveal">Pour aller plus loin</h3>
+        <p class="note reveal">
+          Le détail technique, pour ceux que ça intéresse. Rien d'indispensable
+          pour décider.
+        </p>
+
+        <div class="accordion reveal">
+          <details class="acc">
+            <summary class="acc__head">Pourquoi empiler réduit le bruit ?</summary>
+            <div class="acc__body">
+              <p>
+                Le signal de l'objet est toujours au même endroit d'une pose à
+                l'autre ; le bruit, lui, tombe au hasard. En moyennant les
+                images, le hasard se compense et l'objet reste.
+              </p>
+              <p>
+                D'où la règle : plus on additionne de poses, plus l'image est
+                propre. Quadrupler le nombre de poses divise le grain par deux.
+              </p>
+            </div>
+          </details>
+
+          <details class="acc">
+            <summary class="acc__head">Pourquoi calibrer avant d'étirer ?</summary>
+            <div class="acc__body">
+              <p>
+                L'étirement amplifie tout ce qui est déjà présent — y compris un
+                dégradé de pollution lumineuse ou un défaut de capteur. Nettoyer
+                d'abord, amplifier ensuite.
+              </p>
+              <p>
+                Fait dans cet ordre, les couleurs restent justes. Dans l'ordre
+                inverse, on amplifie des dominantes qu'aucune correction ne
+                rattrape vraiment.
+              </p>
+            </div>
+          </details>
+
+          <details class="acc">
+            <summary class="acc__head">Darks, flats : c'est quoi ?</summary>
+            <div class="acc__body">
+              <p>
+                Les <strong>darks</strong> sont des poses faites bouchon fermé :
+                elles enregistrent le bruit propre au capteur, qu'on soustrait
+                ensuite.
+              </p>
+              <p>
+                Les <strong>flats</strong> sont des poses d'une surface
+                uniformément éclairée : elles révèlent les poussières et le
+                vignetage de l'optique, qu'on corrige ensuite.
+              </p>
+            </div>
+          </details>
+
+          <!-- Volets encore à écrire, conservés depuis l'ancienne section -->
+          <details class="acc">
+            <summary class="acc__head">Suivi, monture et mise en station</summary>
+            <div class="acc__body"><p>TODO : contenu.</p></div>
+          </details>
+          <details class="acc">
+            <summary class="acc__head">Temps de pose, gain et bruit</summary>
+            <div class="acc__body"><p>TODO : contenu.</p></div>
+          </details>
+          <details class="acc">
+            <summary class="acc__head">Filtres et pollution lumineuse</summary>
+            <div class="acc__body"><p>TODO : contenu.</p></div>
+          </details>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -842,49 +1082,18 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       10. POUR ALLER PLUS LOIN  —  accordéon, replié par défaut
-       ============================================================ -->
-  <section id="technique" class="section">
-    <div class="wrap">
-      <p class="section__num">08</p>
-      <h2 class="section__title reveal">Pour aller plus loin</h2>
-      <p class="section__intro reveal">
-        Le détail technique, pour ceux que ça intéresse. Rien d'indispensable
-        pour décider.
-      </p>
-
-      <div class="accordion reveal">
-        <!-- TODO: contenu de chaque volet -->
-        <details class="acc">
-          <summary class="acc__head">Suivi, monture et mise en station</summary>
-          <div class="acc__body"><p>TODO : contenu.</p></div>
-        </details>
-        <details class="acc">
-          <summary class="acc__head">Temps de pose, gain et bruit</summary>
-          <div class="acc__body"><p>TODO : contenu.</p></div>
-        </details>
-        <details class="acc">
-          <summary class="acc__head">Filtres et pollution lumineuse</summary>
-          <div class="acc__body"><p>TODO : contenu.</p></div>
-        </details>
-        <details class="acc">
-          <summary class="acc__head">Images de calibration (darks, flats, offsets)</summary>
-          <div class="acc__body"><p>TODO : contenu.</p></div>
-        </details>
-        <details class="acc">
-          <summary class="acc__head">Chaîne logicielle</summary>
-          <div class="acc__body"><p>TODO : contenu.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
+  <!-- L'ancienne section « Pour aller plus loin » a été repliée dans
+       la section traitement ; l'ancre #technique y a été déplacée. -->
 
 </main>
 
 <footer class="footer">
   <div class="wrap">
-    <p>Document de travail — évolutif. <!-- TODO: mention de contact / date de mise à jour --></p>
+    <p class="footer__line">Document vivant — enrichi au fil du projet.</p>
+    <!-- TODO: mettre à jour la date à chaque révision -->
+    <p class="footer__meta">
+      Dernière mise à jour : <time datetime="2026-08-09">9 août 2026</time>
+    </p>
   </div>
 </footer>
 
