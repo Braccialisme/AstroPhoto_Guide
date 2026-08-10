@@ -1103,6 +1103,7 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
 .scale { list-style: none; margin: 0 0 2rem; padding: 0; display: grid; gap: 1rem; }
 
 .rung {
+  position: relative;   /* ancre le badge du cran recommandé */
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1112,6 +1113,35 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
 .rung:hover { border-color: var(--line-strong); background: var(--surface-2); }
 
 .rung__body { min-width: 0; }
+
+/* Le cran retenu par le projet */
+.rung--reco {
+  border-color: var(--accent);
+  background: var(--surface-2);
+  padding-top: 1.7rem;
+}
+.rung__badge {
+  position: absolute;
+  top: -0.7rem;
+  left: 1.35rem;
+  margin: 0;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* Le cran hors budget, affiché pour situer l'horizon */
+.rung--dream {
+  background: transparent;
+  border-style: dashed;
+}
+.rung--dream .gear__name,
+.rung--dream .gear__pitch { color: var(--muted); }
 .rung__extra { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
 
 /* ------------------------------------------------------------
@@ -1176,6 +1206,92 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
 .brick .config__desc  { grid-column: 1 / -1; grid-row: 2; }
 .brick .note { margin-top: 1.25rem; }
 .brick .mount { margin-top: 1.35rem; }
+
+/* Utilitaires de rythme dans la vitrine */
+.spaced  { margin-top: 3rem; }
+.measure { max-width: var(--measure); }
+
+/* ------------------------------------------------------------
+   NOMOUNT — le palier 0 : démarrer sans monture
+   ------------------------------------------------------------ */
+.nomount,
+.configs-scale {
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  padding-top: clamp(2.5rem, 6vw, 3.5rem);
+  border-top: 1px solid var(--line);
+}
+.nomount .split__text { margin-bottom: 2.25rem; }
+.nomount .gear__label { margin-bottom: 1.1rem; }
+
+/* Méthode numérotée */
+.method {
+  counter-reset: step;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  max-width: var(--measure);
+  display: grid;
+  gap: 0.6rem;
+}
+.method li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.85rem 1.2rem 0.85rem 3.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.method li::before {
+  content: counter(step);
+  position: absolute;
+  left: 1.1rem;
+  top: 0.85rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+/* ------------------------------------------------------------
+   BOM — le détail chiffré d'une configuration, dans une carte
+   de palier. Poste à gauche, prix à droite.
+   ------------------------------------------------------------ */
+.bom {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.bom li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.bom__price {
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Quatre configs détaillées : on laisse plus de largeur par carte
+   que dans la grille de paliers courte de la section budgets. */
+.configs-scale .tiers {
+  grid-template-columns: repeat(auto-fit, minmax(19.5rem, 1fr));
+}
 
 /* ------------------------------------------------------------
    PITCH — l'encadré fort : la configuration qu'on propose de

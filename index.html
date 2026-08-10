@@ -828,13 +828,22 @@
             </li>
             <li class="config config--reco">
               <span class="config__name">Recommandé</span>
+              <span class="config__desc">
+                iOptron SkyHunter — ~1 kg, GoTo, équatorial natif
+              </span>
+              <span class="config__price">~470-500 €</span>
+            </li>
+            <li class="config">
+              <span class="config__name">Alternative</span>
               <span class="config__desc">Star Adventurer GTi</span>
               <span class="config__price">~550 €</span>
             </li>
             <li class="config">
-              <span class="config__name">Premium</span>
-              <span class="config__desc">ZWO AM3 — sans contrepoids</span>
-              <span class="config__price">~750 €</span>
+              <span class="config__name">Rêve d'upgrade</span>
+              <span class="config__desc">
+                Harmoniques : ZWO AM3N, iOptron HEM15 — sans contrepoids
+              </span>
+              <span class="config__price">~1400 €+</span>
             </li>
           </ul>
         </article>
@@ -845,26 +854,34 @@
           <p class="brick__role">Corrige le suivi en continu et pilote la séance.</p>
           <ul class="configs__list">
             <li class="config config--reco">
-              <span class="config__name">Pilotage</span>
+              <span class="config__name">Maison</span>
               <span class="config__desc">
-                ASIAIR (Mini ou Plus) — tout au téléphone, sans PC
+                Raspberry Pi + Astroberry (INDI, KStars/Ekos, PHD2) —
+                open-source, sans verrou de marque
               </span>
-              <span class="config__price">~200-300 €</span>
+              <span class="config__price">~70-120 €</span>
             </li>
             <li class="config">
               <span class="config__name">Guidage</span>
               <span class="config__desc">
-                Lunette-guide 30 mm + caméra ZWO ASI120MM Mini
+                Lunette-guide 30 mm + caméra de guidage
               </span>
               <span class="config__price">~210 €</span>
             </li>
+            <li class="config">
+              <span class="config__name">Clé en main</span>
+              <span class="config__desc">
+                ASIAIR — zéro config, mais caméras ZWO obligatoires
+              </span>
+              <span class="config__price">~200-300 €</span>
+            </li>
           </ul>
           <aside class="mount">
-            <p class="mount__label">À savoir avant d'acheter</p>
+            <p class="mount__label">Dit autrement</p>
             <p>
-              L'ASIAIR ne fonctionne qu'avec des caméras ZWO — d'où un guidage
-              tout-ZWO. Simple et fiable, mais écosystème fermé. Alternative
-              libre : mini-PC + <strong>PHD2</strong> (gratuit).
+              Un ASIAIR, c'est un Raspberry Pi dans un joli boîtier avec un
+              logiciel fermé — la version maison fait la même chose, en libre
+              et moins cher.
             </p>
           </aside>
         </article>
@@ -903,20 +920,6 @@
         </article>
       </div>
 
-      <!-- Le pitch : la config qu'on propose de financer -->
-      <aside class="pitch reveal">
-        <p class="pitch__label">Notre config type nomade</p>
-        <p class="pitch__lead">
-          Sony A7R II + Samyang 24 mm + lunette 72ED + Star Adventurer GTi +
-          ASIAIR + guidage ZWO + batterie portable.
-        </p>
-        <p class="pitch__price">~2600-2900 € en occasion</p>
-        <p class="pitch__note">
-          Un sac à dos complet, ciel profond guidé. Partagé entre
-          co-financeurs, et évolutif brique par brique.
-        </p>
-      </aside>
-
       <aside class="mount reveal">
         <p class="mount__label">Conseil d'achat</p>
         <p>
@@ -927,31 +930,137 @@
         </p>
       </aside>
 
-      <div class="split">
-        <div class="split__col">
-          <p class="gear__label reveal">Ce que ça permet</p>
-          <p class="split__text reveal">
-            Depuis un bon ciel (Bortle 3-4, à moins de 2 h), ce setup capture
-            nébuleuses et galaxies en pose longue guidée. Le même sac, avec le
-            téléobjectif à la place de la lunette, fait du grand champ et de la
-            Voie lactée. Polyvalent, transportable, évolutif.
+      <p class="gear__label reveal spaced">Ce que ça permet</p>
+      <p class="split__text reveal measure">
+        Depuis un bon ciel (Bortle 3-4, à moins de 2 h), ce setup capture
+        nébuleuses et galaxies en pose longue guidée. Le même sac, avec le
+        téléobjectif à la place de la lunette, fait du grand champ et de la
+        Voie lactée. Polyvalent, transportable, évolutif.
+      </p>
+
+      <!-- ---- Palier 0 : démarrer sans monture ---- -->
+      <div class="nomount">
+        <h3 class="compare__title reveal">On peut même commencer sans monture</h3>
+        <p class="split__text reveal measure">
+          Pas de monture, pas de suivi ? On peut quand même viser le ciel
+          profond. L'astuce : des poses très courtes (1 à 3 secondes, sous la
+          limite du filé d'étoiles) mais accumulées par centaines, voire par
+          milliers. Le logiciel empile tout, et l'objet ressort. C'est plus
+          exigeant qu'avec une monture, mais des débutants sortent ainsi la
+          nébuleuse d'Orion ou Andromède depuis un simple trépied.
+        </p>
+
+        <p class="gear__label reveal">La méthode, en cinq temps</p>
+        <ol class="method reveal">
+          <li>Repérer sur Stellarium le sens de déplacement de l'objet.</li>
+          <li>Le placer d'un côté du cadre pour le laisser dériver dans le champ.</li>
+          <li>Trouver le temps de pose maximum sans filé — quelques essais suffisent.</li>
+          <li>Lancer des séries de 6-8 min à l'intervallomètre, revenir recentrer, recommencer.</li>
+          <li>Empiler le tout (Siril) et traiter (GIMP).</li>
+        </ol>
+
+        <aside class="mount reveal">
+          <p class="mount__label">La limite, honnêtement</p>
+          <p>
+            Les objets peu lumineux — galaxies faibles, nébuleuses ténues —
+            restent difficiles. C'est là que la monture change la donne. Mais
+            pour débuter et se faire la main, le trépied seul suffit à
+            s'accrocher.
           </p>
+        </aside>
+      </div>
+
+      <!-- ---- Les budgets nomades, du palier 0 au nomade évolué ---- -->
+      <div class="configs-scale">
+        <h3 class="compare__title reveal">Les budgets nomades</h3>
+        <p class="split__text reveal measure">
+          Prix en occasion, hors lunette — celle-ci est un ajout de phase 2.
+        </p>
+
+        <div class="tiers reveal">
+
+          <div class="tier">
+            <p class="tier__label">Palier 0 — Sans monture</p>
+            <p class="tier__price">~830-880 €</p>
+            <ul class="bom">
+              <li><span>Sony A6000 (APS-C)</span><span class="bom__price">~280 €</span></li>
+              <li><span>Samyang 24 mm f/1.8 — ou 135 mm f/2 pour le ciel profond serré</span><span class="bom__price">~400 €</span></li>
+              <li><span>Trépied costaud</span><span class="bom__price">~150 €</span></li>
+              <li><span>Intervallomètre + bagues + SD + batterie</span><span class="bom__price">~0-50 €</span></li>
+            </ul>
+            <p class="tier__desc">
+              Nightscape, Voie lactée, et ciel profond en poses courtes
+              empilées. On démarre le ciel profond sans monture — on ajoute la
+              SkyHunter ensuite pour viser plus faible.
+            </p>
+          </div>
+
+          <div class="tier">
+            <p class="tier__label">Config A — Nomade essentiel</p>
+            <p class="tier__price">~1450 €</p>
+            <ul class="bom">
+              <li><span>Sony A6000 (APS-C)</span><span class="bom__price">~280 €</span></li>
+              <li><span>Samyang 24 mm f/1.8</span><span class="bom__price">~400 €</span></li>
+              <li><span>iOptron SkyHunter</span><span class="bom__price">~470 €</span></li>
+              <li><span>Trépied costaud</span><span class="bom__price">~150 €</span></li>
+              <li><span>Bagues, batterie, SD, anti-buée, frontale rouge</span><span class="bom__price">~150 €</span></li>
+            </ul>
+            <p class="tier__desc">
+              Nightscape, Voie lactée, premiers pas en ciel profond grand champ
+              (non guidé).
+            </p>
+          </div>
+
+          <div class="tier tier--featured">
+            <p class="tier__badge">Recommandé</p>
+            <p class="tier__label">Config B — Nomade recommandé</p>
+            <p class="tier__price">~1850 €</p>
+            <ul class="bom">
+              <li><span>Sony A6000</span><span class="bom__price">~280 €</span></li>
+              <li><span>Samyang 24 mm f/1.8 + 135 mm f/2</span><span class="bom__price">~800 €</span></li>
+              <li><span>iOptron SkyHunter</span><span class="bom__price">~470 €</span></li>
+              <li><span>Trépied costaud</span><span class="bom__price">~150 €</span></li>
+              <li><span>Accessoires</span><span class="bom__price">~150 €</span></li>
+            </ul>
+            <p class="tier__desc">
+              Le 135 mm débloque nébuleuses et galaxies en grand champ, plus la
+              mosaïque. Le sweet spot polyvalent.
+            </p>
+          </div>
+
+          <div class="tier">
+            <p class="tier__label">Config C — Nomade évolué</p>
+            <p class="tier__price">~2650 €</p>
+            <ul class="bom">
+              <li><span>Sony A7R II — plein format, mosaïque et photogrammétrie</span><span class="bom__price">~780 €</span></li>
+              <li><span>Samyang 24 mm f/1.8 + 135 mm f/2</span><span class="bom__price">~800 €</span></li>
+              <li><span>iOptron SkyHunter</span><span class="bom__price">~470 €</span></li>
+              <li><span>Pilotage et guidage maison : Raspberry Pi + lunette-guide + caméra</span><span class="bom__price">~280 €</span></li>
+              <li><span>Trépied costaud</span><span class="bom__price">~150 €</span></li>
+              <li><span>Accessoires</span><span class="bom__price">~150 €</span></li>
+            </ul>
+            <p class="tier__desc">
+              Plein format et guidage open-source, prêt à recevoir la lunette
+              72ED.
+            </p>
+          </div>
         </div>
 
-        <div class="split__col">
-          <aside class="keybox reveal">
-            <p class="keybox__label">Le prix du ticket</p>
-            <p class="keybox__lead">
-              Un setup nomade complet, guidage compris, à partir de ~2000 €.
-            </p>
-            <p>
-              C'est le plancher, en occasion et en entrée de gamme : A6000 +
-              AZ-GTi + 72ED + ASIAIR + guidage + batterie. La config qu'on
-              recommande vraiment est détaillée plus bas. Le même socle
-              accueillera ensuite de meilleures optiques.
-            </p>
-          </aside>
-        </div>
+        <p class="section__note reveal">
+          La monture n'est pas la porte d'entrée, c'est le premier upgrade. On
+          commence à ~830 €, on ajoute le suivi quand on veut aller chercher
+          les objets faibles.
+        </p>
+
+        <aside class="keybox reveal">
+          <p class="keybox__label">La phase 2</p>
+          <p class="keybox__lead">
+            La lunette 72ED (~550 € avec aplanisseur) est l'ajout de phase 2.
+          </p>
+          <p>
+            Elle se pose sur la même SkyHunter, sans rien racheter d'autre.
+          </p>
+        </aside>
       </div>
     </div>
   </section>
@@ -997,35 +1106,54 @@
           </p>
         </div>
 
-        <!-- Pilotage et guidage -->
+        <!-- Pilotage et guidage : la voie libre d'abord -->
         <div class="split__col">
-          <p class="gear__label reveal">Le pilotage &amp; guidage</p>
+          <p class="gear__label reveal">Piloter et guider : la voie maison</p>
           <p class="split__text reveal">
-            Pour suivre précisément le ciel en longue pose, on « guide » : une
-            petite caméra corrige le suivi en continu. Deux options.
+            Pour suivre précisément et guider les poses longues, on utilise un
+            petit ordinateur de terrain. Deux options.
           </p>
           <div class="gear-list reveal">
             <div class="gear">
               <h4 class="gear__name">
-                ASIAIR
-                <span class="gear__meta">~300 €</span>
+                Maison <span class="rung__extra">recommandé</span>
+                <span class="gear__meta">~280 € le combo</span>
               </h4>
               <p class="gear__pitch">
-                Un mini-boîtier dédié qui pilote tout, contrôlé au téléphone.
-                Aucun ordinateur à trimballer — parfait pour le nomade.
+                Un Raspberry Pi + logiciels libres : <strong>INDI</strong> avec
+                <strong>KStars/Ekos</strong>, et <strong>PHD2</strong> pour le
+                guidage. Images prêtes à flasher : <strong>Astroberry</strong>
+                (gratuit) ou <strong>StellarMate</strong>.
               </p>
+              <ul class="pc">
+                <li class="pc__pro">Open-source, pas cher, aucun verrou de marque, compatible avec n'importe quelle caméra.</li>
+                <li class="pc__con">Un peu de configuration au départ.</li>
+              </ul>
             </div>
             <div class="gear">
               <h4 class="gear__name">
-                Mini-PC / laptop
-                <span class="gear__meta">variable</span>
+                Clé en main <span class="rung__extra">payant</span>
+                <span class="gear__meta">~300 €</span>
               </h4>
               <p class="gear__pitch">
-                Plus flexible, logiciels gratuits, mais un ordinateur à
-                alimenter en plus.
+                Un ASIAIR : plug-and-play piloté au téléphone, mais écosystème
+                fermé (caméras ZWO obligatoires) et plus cher.
               </p>
+              <ul class="pc">
+                <li class="pc__pro">Zéro configuration.</li>
+                <li class="pc__con">Verrou de marque.</li>
+              </ul>
             </div>
           </div>
+
+          <aside class="mount reveal">
+            <p class="mount__label">Dit autrement</p>
+            <p>
+              Un ASIAIR, c'est un Raspberry Pi dans un joli boîtier avec un
+              logiciel fermé — la version maison fait la même chose, en libre
+              et moins cher.
+            </p>
+          </aside>
         </div>
       </div>
 
@@ -1072,9 +1200,26 @@
             </div>
           </li>
 
-          <li class="rung">
+          <li class="rung rung--reco">
+            <p class="rung__badge">Notre choix</p>
             <div class="rung__body">
               <p class="gear__step">Cran 3</p>
+              <h4 class="gear__name">
+                iOptron SkyHunter
+                <span class="gear__meta">~470-500 € (tête) · ~1 kg</span>
+              </h4>
+              <p class="gear__pitch">La pépite.</p>
+              <ul class="pc">
+                <li class="pc__pro">GoTo deux axes, modes équatorial et azimutal, porte une petite lunette.</li>
+                <li class="pc__pro">Plus légère que la GTi, native en équatorial sans bidouille.</li>
+                <li class="pc__con">Vérifier la compatibilité si on veut un pilotage tiers.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="rung">
+            <div class="rung__body">
+              <p class="gear__step">Alternative</p>
               <h4 class="gear__name">
                 Star Adventurer GTi
                 <span class="gear__meta">~550 € · charge ~5 kg</span>
@@ -1082,23 +1227,22 @@
               <p class="gear__pitch">Le sweet spot propre.</p>
               <ul class="pc">
                 <li class="pc__pro">Conçue pour l'astrophoto, GoTo, porte lunette + guidage, sac à dos.</li>
-                <li class="pc__con">Un peu plus chère que l'AZ-GTi.</li>
+                <li class="pc__con">Plus lourde que la SkyHunter, et un peu plus chère que l'AZ-GTi.</li>
               </ul>
             </div>
           </li>
 
-          <li class="rung">
+          <li class="rung rung--dream">
             <div class="rung__body">
-              <p class="gear__step">Cran 4</p>
+              <p class="gear__step">Rêve d'upgrade</p>
               <h4 class="gear__name">
-                ZWO AM3
-                <span class="gear__meta">~750 € · charge 8 kg sans contrepoids</span>
+                Montures harmoniques
+                <span class="gear__meta">~1400 €+</span>
               </h4>
-              <p class="gear__pitch">Le premium.</p>
-              <ul class="pc">
-                <li class="pc__pro">Ultra-légère, sans contrepoids, guidage excellent, poses longues.</li>
-                <li class="pc__con">Le budget grimpe.</li>
-              </ul>
+              <p class="gear__pitch">
+                ZWO AM3N, iOptron HEM15 — ultra-légères, sans contrepoids.
+                Pour plus tard.
+              </p>
             </div>
           </li>
         </ul>
@@ -1106,13 +1250,11 @@
         <aside class="keybox reveal">
           <p class="keybox__label">Notre recommandation</p>
           <p class="keybox__lead">
-            Pour un setup nomade léger et abordable : l'AZ-GTi est le meilleur
-            ticket d'entrée qui porte déjà une petite lunette.
+            Pour un nomade léger qui accueille une lunette : la SkyHunter.
           </p>
           <p>
             Un simple tracker suffit si on se limite au boîtier + objectif.
-            La règle : <strong>objectif seul, un tracker ; lunette, une GoTo</strong>
-            (AZ-GTi ou GTi).
+            La règle : <strong>objectif seul, un tracker ; lunette, une GoTo</strong>.
           </p>
         </aside>
       </div>
@@ -1121,11 +1263,14 @@
       <aside class="keybox reveal">
         <p class="keybox__label">Setup nomade type</p>
         <p class="keybox__lead">
-          Petite lunette 72ED + boîtier + monture Star Adventurer GTi + ASIAIR
-          + batterie portable = un setup ciel profond complet qui tient dans un
-          sac à dos.
+          Boîtier + optique + iOptron SkyHunter + pilotage maison sur
+          Raspberry Pi + batterie portable = un setup ciel profond complet qui
+          tient dans un sac à dos.
         </p>
-        <p>Notre cible privilégiée.</p>
+        <p>
+          Notre cible privilégiée — le chiffrage complet est dans
+          <a href="#setup">les budgets nomades</a>.
+        </p>
       </aside>
     </div>
   </section>
@@ -1669,25 +1814,25 @@
         </div>
 
         <div class="tier">
-          <p class="tier__label">Palier 2 — Boîtier nomade</p>
-          <p class="tier__price">~700-800 €</p>
+          <p class="tier__label">Palier 2 — Boîtier, sans monture</p>
+          <p class="tier__price">~830-880 €</p>
           <p class="tier__gear">
-            Sony A6000 + Samyang 24 mm + trépied.
+            Sony A6000 + Samyang 24 mm + trépied + intervallomètre.
           </p>
           <p class="tier__desc">
-            Nightscape sérieux, grandes nébuleuses, Voie lactée détaillée.
-            Le vrai saut qualité.
+            Nightscape sérieux, Voie lactée détaillée, et déjà du ciel profond
+            en poses courtes empilées. Le vrai saut qualité.
           </p>
         </div>
 
         <div class="tier tier--featured">
           <p class="tier__badge">Recommandé</p>
-          <p class="tier__label">Palier 3 — Setup nomade guidé</p>
-          <p class="tier__price">~2000-2900 €</p>
+          <p class="tier__label">Palier 3 — Setup nomade suivi</p>
+          <p class="tier__price">~1450-2650 €</p>
           <p class="tier__gear">
-            A6000 ou A7R II + Samyang + lunette 72ED + Star Adventurer GTi ou
-            AZ-GTi + ASIAIR + guidage + batterie. Selon le boîtier et la
-            monture retenus.
+            A6000 ou A7R II + Samyang 24 et 135 mm + iOptron SkyHunter +
+            pilotage maison + batterie. Selon le boîtier et les optiques —
+            voir <a href="#setup">le détail des trois configs</a>.
           </p>
           <p class="tier__desc">
             Ciel profond complet, galaxies et nébuleuses en pose longue.
@@ -1751,7 +1896,7 @@
     <p class="footer__line">Document vivant — enrichi au fil du projet.</p>
     <!-- TODO: mettre à jour la date à chaque révision -->
     <p class="footer__meta">
-      Dernière mise à jour : <time datetime="2026-08-09">9 août 2026</time>
+      Dernière mise à jour : <time datetime="2026-08-10">10 août 2026</time>
     </p>
   </div>
 </footer>
