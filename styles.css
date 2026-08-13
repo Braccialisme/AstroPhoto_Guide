@@ -482,10 +482,13 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
   grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
 }
 .cards--targets .shot img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 .cards--targets .card__title { margin-top: 1.4rem; }
+
+/* Précision de variante dans une cellule de tableau : sur sa propre ligne */
+.table th .card__alt { display: block; margin-top: 0.15rem; }
 
 /* Ligne de réglages d'une cible : diaph, ISO, pose, cumul */
 .recipe {
