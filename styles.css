@@ -475,6 +475,28 @@ a:hover { color: var(--accent-soft); text-decoration-color: var(--accent); }
 
 .card p { color: var(--muted); font-size: 0.95rem; }
 
+/* Variante « cartes cibles » : une image en tête de carte, deux colonnes
+   au maximum pour que la photo reste lisible. Les deux visuels n'ont pas
+   le même format d'origine — on les recadre à l'identique. */
+.cards--targets {
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+}
+.cards--targets .shot img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.cards--targets .card__title { margin-top: 1.4rem; }
+
+/* Ligne de réglages d'une cible : diaph, ISO, pose, cumul */
+.recipe {
+  color: var(--text);
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
 
 /* ============================================================
    6bis. NIVEAUX D'ÉQUIPEMENT
